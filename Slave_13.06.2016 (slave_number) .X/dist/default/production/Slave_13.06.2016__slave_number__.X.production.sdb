@@ -1,0 +1,250 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1825 ]
+[d frameptr 6 ]
+"1 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_adc_lib.h
+[v _adc_init adc_init `(v  1 e 1 0 ]
+"15
+[v _adc_pin_select adc_pin_select `(v  1 e 1 0 ]
+"57
+[v _adc_read adc_read `(i  1 e 2 0 ]
+"1 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
+[v _uart_init uart_init `(v  1 e 1 0 ]
+"38
+[v _baudrate baudrate `(v  1 e 1 0 ]
+"48
+[v _uart_write uart_write `(v  1 e 1 0 ]
+"53
+[v _uart_read uart_read `(uc  1 e 1 0 ]
+"62 Q:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 Q:\Program Files (x86)\Microchip\xc8\v1.36\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 Q:\Program Files (x86)\Microchip\xc8\v1.36\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"15 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\Slave1.c
+[v _uart uart `II(v  1 e 1 0 ]
+"63
+[v _main main `(i  1 e 2 0 ]
+[s S122 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"360 Q:\Program Files (x86)\Microchip\xc8\v1.36\include\pic16f1825.h
+[s S131 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S136 . 1 `S122 1 . 1 0 `S131 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES136  1 e 1 @11 ]
+"463
+[v _PORTC PORTC `VEuc  1 e 1 @14 ]
+[s S234 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"529
+[u S243 . 1 `S234 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES243  1 e 1 @17 ]
+"1077
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+[s S101 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1192
+[u S110 . 1 `S101 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES110  1 e 1 @145 ]
+"1572
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1710
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"1729
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"1748
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S196 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"1773
+[s S204 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S208 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[u S211 . 1 `S196 1 . 1 0 `S204 1 . 1 0 `S208 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES211  1 e 1 @157 ]
+[s S160 . 1 `uc 1 ADPREF0 1 0 :1:0 
+`uc 1 ADPREF1 1 0 :1:1 
+`uc 1 ADNREF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCS0 1 0 :1:4 
+`uc 1 ADCS1 1 0 :1:5 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"1849
+[s S169 . 1 `uc 1 ADPREF 1 0 :2:0 
+`uc 1 . 1 0 :2:2 
+`uc 1 ADCS 1 0 :3:4 
+]
+[u S173 . 1 `S160 1 . 1 0 `S169 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES173  1 e 1 @158 ]
+"2284
+[v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
+[s S19 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TXCKSEL 1 0 :1:2 
+`uc 1 T1GSEL 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 SSSEL 1 0 :1:5 
+`uc 1 SDOSEL 1 0 :1:6 
+`uc 1 RXDTSEL 1 0 :1:7 
+]
+"2607
+[u S27 . 1 `S19 1 . 1 0 ]
+[v _APFCON0bits APFCON0bits `VES27  1 e 1 @285 ]
+"2673
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2950
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"2969
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"2988
+[v _SPBRG SPBRG `VEus  1 e 2 @411 ]
+[s S59 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3049
+[u S68 . 1 `S59 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES68  1 e 1 @413 ]
+[s S38 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3110
+[u S47 . 1 `S38 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES47  1 e 1 @414 ]
+[s S80 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"3171
+[u S89 . 1 `S80 1 . 1 0 ]
+[v _BAUDCONbits BAUDCONbits `VES89  1 e 1 @415 ]
+"6486
+[v _LATC0 LATC0 `VEb  1 e 0 @2160 ]
+"6488
+[v _LATC1 LATC1 `VEb  1 e 0 @2161 ]
+"6490
+[v _LATC2 LATC2 `VEb  1 e 0 @2162 ]
+"6674
+[v _RCIF RCIF `VEb  1 e 0 @141 ]
+"6914
+[v _TRISC0 TRISC0 `VEb  1 e 0 @1136 ]
+"6916
+[v _TRISC1 TRISC1 `VEb  1 e 0 @1137 ]
+"6918
+[v _TRISC2 TRISC2 `VEb  1 e 0 @1138 ]
+"6926
+[v _TRMT TRMT `VEb  1 e 0 @3313 ]
+"5 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\Slave1.c
+[v _slave_number slave_number `DCCi  1 e 2 0 ]
+"7
+[v _receive_data receive_data `i  1 e 2 0 ]
+"9
+[v _voltage_adc_value voltage_adc_value `i  1 e 2 0 ]
+[v _temp_adc_value temp_adc_value `i  1 e 2 0 ]
+"63
+[v _main main `(i  1 e 2 0 ]
+{
+"95
+} 0
+"1 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
+[v _uart_init uart_init `(v  1 e 1 0 ]
+{
+"36
+} 0
+"38
+[v _baudrate baudrate `(v  1 e 1 0 ]
+{
+[v baudrate@baudrate baudrate `l  1 p 4 0 ]
+"46
+} 0
+"57 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_adc_lib.h
+[v _adc_read adc_read `(i  1 e 2 0 ]
+{
+"58
+[v adc_read@adc_value adc_value `i  1 a 2 3 ]
+"66
+} 0
+"15
+[v _adc_pin_select adc_pin_select `(v  1 e 1 0 ]
+{
+[v adc_pin_select@pin_number pin_number `i  1 p 2 0 ]
+"55
+} 0
+"1
+[v _adc_init adc_init `(v  1 e 1 0 ]
+{
+"13
+} 0
+"15 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\Slave1.c
+[v _uart uart `II(v  1 e 1 0 ]
+{
+"61
+} 0
+"48 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
+[v _uart_write uart_write `(v  1 e 1 0 ]
+{
+[v uart_write@data data `uc  1 a 1 wreg ]
+[v uart_write@data data `uc  1 a 1 wreg ]
+[v uart_write@data data `uc  1 a 1 0 ]
+"51
+} 0
+"53
+[v _uart_read uart_read `(uc  1 e 1 0 ]
+{
+"56
+} 0

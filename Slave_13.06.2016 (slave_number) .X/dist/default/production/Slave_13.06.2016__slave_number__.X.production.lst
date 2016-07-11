@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
-                                                                                               Mon Jun 20 15:42:35 2016
+                                                                                               Mon Jul 11 17:51:49 2016
 
 Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
      1                           	processor	16F1825
@@ -174,18 +174,18 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    168  0FEF                     	;# 
    169                           
    170                           	psect	idataCOMMON
-   171  0223                     __pidataCOMMON:	
+   171  0225                     __pidataCOMMON:	
    172                           
    173                           ;initializer for _data
-   174  0223  3464               	retlw	100
-   175  0224  3400               	retlw	0
+   174  0225  3464               	retlw	100
+   175  0226  3400               	retlw	0
    176                           
    177                           	psect	stringtext
-   178  0225                     __pstringtext:	
-   179  0225                     _slave_number:	
-   180  0225  340C               	retlw	12
-   181  0226  3400               	retlw	0
-   182  0227                     __end_of_slave_number:	
+   178  0227                     __pstringtext:	
+   179  0227                     _slave_number:	
+   180  0227  340C               	retlw	12
+   181  0228  3400               	retlw	0
+   182  0229                     __end_of_slave_number:	
    183  000B                     _INTCONbits	set	11
    184  0011                     _PIR1bits	set	17
    185  000E                     _PORTC	set	14
@@ -232,9 +232,9 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    226  0110  01A9               	clrf	(__pbssBANK0+3)& (0+127)
    227                           
    228                           ; Initialize objects allocated to COMMON
-   229  0111  3182  2223  3181   	fcall	__pidataCOMMON	;fetch initializer
+   229  0111  3182  2225  3181   	fcall	__pidataCOMMON	;fetch initializer
    230  0114  00F8               	movwf	__pdataCOMMON& (0+127)
-   231  0115  3182  2224         	fcall	__pidataCOMMON+1	;fetch initializer
+   231  0115  3182  2226         	fcall	__pidataCOMMON+1	;fetch initializer
    232  0117  00F9               	movwf	(__pdataCOMMON+1)& (0+127)
    233  0118                     end_of_initialization:	
    234                           ;End of C runtime variable initialization code
@@ -396,7 +396,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    385  011E  0099               	movwf	25	;volatile
    386                           
    387                           ;Slave1.c: 67: uart_init();
-   388  011F  3181  21C4  3181   	fcall	_uart_init
+   388  011F  3181  21C6  3181   	fcall	_uart_init
    389                           
    390                           ;Slave1.c: 68: baudrate(9600);
    391  0122  3000               	movlw	0
@@ -408,10 +408,10 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    397  0128  00A1               	movwf	baudrate@baudrate+1
    398  0129  3080               	movlw	128
    399  012A  00A0               	movwf	baudrate@baudrate
-   400  012B  3181  21A7  3181   	fcall	_baudrate
+   400  012B  3181  21A9  3181   	fcall	_baudrate
    401                           
    402                           ;Slave1.c: 69: adc_init();
-   403  012E  3181  21DD  3181   	fcall	_adc_init
+   403  012E  3181  21DF  3181   	fcall	_adc_init
    404                           
    405                           ;Slave1.c: 70: _delay((unsigned long)((10)*(16000000L/4000000.0)));
    406  0131  300D               	movlw	13
@@ -454,7 +454,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    443  0144  00A0               	movwf	adc_pin_select@pin_number
    444  0145  3000               	movlw	0
    445  0146  00A1               	movwf	adc_pin_select@pin_number+1
-   446  0147  3181  2175  3181   	fcall	_adc_pin_select
+   446  0147  3181  2177  3181   	fcall	_adc_pin_select
    447                           
    448                           ;Slave1.c: 85: _delay((unsigned long)((10)*(16000000L/4000000.0)));
    449  014A  300D               	movlw	13
@@ -465,7 +465,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    454  014E  294D               	goto	u207
    455                           
    456                           ;Slave1.c: 86: voltage_adc_value = adc_read();
-   457  014F  3181  21F2  3181   	fcall	_adc_read
+   457  014F  3181  21F4  3181   	fcall	_adc_read
    458  0152  0020               	movlb	0	; select bank0
    459  0153  0821               	movf	?_adc_read+1,w
    460  0154  00A9               	movwf	_voltage_adc_value+1
@@ -485,1094 +485,1096 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    474  015D  00A0               	movwf	adc_pin_select@pin_number
    475  015E  3000               	movlw	0
    476  015F  00A1               	movwf	adc_pin_select@pin_number+1
-   477  0160  3181  2175  3181   	fcall	_adc_pin_select
+   477  0160  3181  2177  3181   	fcall	_adc_pin_select
    478                           
-   479                           ;Slave1.c: 89: _delay((unsigned long)((10)*(16000000L/4000000.0)));
-   480  0163  300D               	movlw	13
+   479                           ;Slave1.c: 89: _delay((unsigned long)((20)*(16000000L/4000000.0)));
+   480  0163  301A               	movlw	26
    481  0164  0020               	movlb	0	; select bank0
    482  0165  00A5               	movwf	??_main
    483  0166                     u227:	
    484  0166  0BA5               	decfsz	??_main,f
    485  0167  2966               	goto	u227
-   486                           
-   487                           ;Slave1.c: 90: temp_adc_value = adc_read();
-   488  0168  3181  21F2  3181   	fcall	_adc_read
-   489  016B  0020               	movlb	0	; select bank0
-   490  016C  0821               	movf	?_adc_read+1,w
-   491  016D  00A7               	movwf	_temp_adc_value+1
-   492  016E  0820               	movf	?_adc_read,w
-   493  016F  00A6               	movwf	_temp_adc_value
-   494                           
-   495                           ;Slave1.c: 91: _delay((unsigned long)((10)*(16000000L/4000000.0)));
-   496  0170  300D               	movlw	13
-   497  0171  00A5               	movwf	??_main
-   498  0172                     u237:	
-   499  0172  0BA5               	decfsz	??_main,f
-   500  0173  2972               	goto	u237
-   501  0174  2942               	goto	l1216
-   502  0175                     __end_of_main:	
-   503                           
-   504                           	psect	text1
-   505  01C4                     __ptext1:	
-   506 ;; *************** function _uart_init *****************
-   507 ;; Defined at:
-   508 ;;		line 1 in file "16f1825_uart_lib.h"
-   509 ;; Parameters:    Size  Location     Type
-   510 ;;		None
-   511 ;; Auto vars:     Size  Location     Type
+   486  0168  0000               	nop
+   487                           
+   488                           ;Slave1.c: 90: temp_adc_value = adc_read();
+   489  0169  3181  21F4  3181   	fcall	_adc_read
+   490  016C  0020               	movlb	0	; select bank0
+   491  016D  0821               	movf	?_adc_read+1,w
+   492  016E  00A7               	movwf	_temp_adc_value+1
+   493  016F  0820               	movf	?_adc_read,w
+   494  0170  00A6               	movwf	_temp_adc_value
+   495                           
+   496                           ;Slave1.c: 91: _delay((unsigned long)((20)*(16000000L/4000000.0)));
+   497  0171  301A               	movlw	26
+   498  0172  00A5               	movwf	??_main
+   499  0173                     u237:	
+   500  0173  0BA5               	decfsz	??_main,f
+   501  0174  2973               	goto	u237
+   502  0175  0000               	nop
+   503  0176  2942               	goto	l1216
+   504  0177                     __end_of_main:	
+   505                           
+   506                           	psect	text1
+   507  01C6                     __ptext1:	
+   508 ;; *************** function _uart_init *****************
+   509 ;; Defined at:
+   510 ;;		line 1 in file "16f1825_uart_lib.h"
+   511 ;; Parameters:    Size  Location     Type
    512 ;;		None
-   513 ;; Return value:  Size  Location     Type
-   514 ;;                  1    wreg      void 
-   515 ;; Registers used:
-   516 ;;		None
-   517 ;; Tracked objects:
-   518 ;;		On entry : 0/0
-   519 ;;		On exit  : 0/0
-   520 ;;		Unchanged: 0/0
-   521 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   513 ;; Auto vars:     Size  Location     Type
+   514 ;;		None
+   515 ;; Return value:  Size  Location     Type
+   516 ;;                  1    wreg      void 
+   517 ;; Registers used:
+   518 ;;		None
+   519 ;; Tracked objects:
+   520 ;;		On entry : 0/0
+   521 ;;		On exit  : 0/0
+   522 ;;		Unchanged: 0/0
+   523 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-   522 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   524 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   523 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   525 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   524 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   526 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   525 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   527 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   526 ;;Total ram usage:        0 bytes
-   527 ;; Hardware stack levels used:    1
-   528 ;; Hardware stack levels required when called:    2
-   529 ;; This function calls:
-   530 ;;		Nothing
-   531 ;; This function is called by:
-   532 ;;		_main
-   533 ;; This function uses a non-reentrant model
-   534 ;;
-   535                           
-   536                           
-   537                           ;psect for function _uart_init
-   538  01C4                     _uart_init:	
-   539                           
-   540                           ;16f1825_uart_lib.h: 3: APFCON0bits.RXDTSEL = 0;
+   528 ;;Total ram usage:        0 bytes
+   529 ;; Hardware stack levels used:    1
+   530 ;; Hardware stack levels required when called:    2
+   531 ;; This function calls:
+   532 ;;		Nothing
+   533 ;; This function is called by:
+   534 ;;		_main
+   535 ;; This function uses a non-reentrant model
+   536 ;;
+   537                           
+   538                           
+   539                           ;psect for function _uart_init
+   540  01C6                     _uart_init:	
    541                           
-   542                           ;incstack = 0
-   543                           ; Regs used in _uart_init: []
-   544  01C4  0022               	movlb	2	; select bank2
-   545  01C5  139D               	bcf	29,7	;volatile
-   546                           
-   547                           ;16f1825_uart_lib.h: 4: APFCON0bits.TXCKSEL = 0;
-   548  01C6  111D               	bcf	29,2	;volatile
-   549                           
-   550                           ;16f1825_uart_lib.h: 7: TXSTAbits.TX9 = 0;
-   551  01C7  0023               	movlb	3	; select bank3
-   552  01C8  131E               	bcf	30,6	;volatile
-   553                           
-   554                           ;16f1825_uart_lib.h: 8: TXSTAbits.TXEN = 1;
-   555  01C9  169E               	bsf	30,5	;volatile
-   556                           
-   557                           ;16f1825_uart_lib.h: 9: TXSTAbits.SYNC = 0;
-   558  01CA  121E               	bcf	30,4	;volatile
-   559                           
-   560                           ;16f1825_uart_lib.h: 10: TXSTAbits.SENDB = 0;
-   561  01CB  119E               	bcf	30,3	;volatile
-   562                           
-   563                           ;16f1825_uart_lib.h: 11: TXSTAbits.BRGH = 0;
-   564  01CC  111E               	bcf	30,2	;volatile
-   565                           
-   566                           ;16f1825_uart_lib.h: 14: RCSTAbits.SPEN = 1;
-   567  01CD  179D               	bsf	29,7	;volatile
-   568                           
-   569                           ;16f1825_uart_lib.h: 15: RCSTAbits.RX9 = 0;
-   570  01CE  131D               	bcf	29,6	;volatile
-   571                           
-   572                           ;16f1825_uart_lib.h: 16: RCSTAbits.CREN = 1;
-   573  01CF  161D               	bsf	29,4	;volatile
-   574                           
-   575                           ;16f1825_uart_lib.h: 17: RCSTAbits.FERR = 0;
-   576  01D0  111D               	bcf	29,2	;volatile
-   577                           
-   578                           ;16f1825_uart_lib.h: 18: RCSTAbits.OERR = 0;
-   579  01D1  109D               	bcf	29,1	;volatile
-   580                           
-   581                           ;16f1825_uart_lib.h: 21: BAUDCONbits.ABDOVF = 1;
-   582  01D2  179F               	bsf	31,7	;volatile
-   583                           
-   584                           ;16f1825_uart_lib.h: 22: BAUDCONbits.RCIDL = 0;
-   585  01D3  131F               	bcf	31,6	;volatile
-   586                           
-   587                           ;16f1825_uart_lib.h: 23: BAUDCONbits.SCKP = 0;
-   588  01D4  121F               	bcf	31,4	;volatile
-   589                           
-   590                           ;16f1825_uart_lib.h: 24: BAUDCONbits.BRG16 = 0;
-   591  01D5  119F               	bcf	31,3	;volatile
-   592                           
-   593                           ;16f1825_uart_lib.h: 25: BAUDCONbits.WUE = 0;
-   594  01D6  109F               	bcf	31,1	;volatile
-   595                           
-   596                           ;16f1825_uart_lib.h: 26: BAUDCONbits.ABDEN = 0;
-   597  01D7  101F               	bcf	31,0	;volatile
-   598                           
-   599                           ;16f1825_uart_lib.h: 32: PIE1bits.RCIE = 1;
-   600  01D8  0021               	movlb	1	; select bank1
-   601  01D9  1691               	bsf	17,5	;volatile
-   602                           
-   603                           ;16f1825_uart_lib.h: 33: INTCONbits.GIE = 1;
-   604  01DA  178B               	bsf	11,7	;volatile
-   605                           
-   606                           ;16f1825_uart_lib.h: 34: INTCONbits.PEIE = 1;
-   607  01DB  170B               	bsf	11,6	;volatile
-   608  01DC  0008               	return
-   609  01DD                     __end_of_uart_init:	
-   610                           
-   611                           	psect	text2
-   612  01A7                     __ptext2:	
-   613 ;; *************** function _baudrate *****************
-   614 ;; Defined at:
-   615 ;;		line 38 in file "16f1825_uart_lib.h"
-   616 ;; Parameters:    Size  Location     Type
-   617 ;;  baudrate        4    0[BANK0 ] long 
-   618 ;; Auto vars:     Size  Location     Type
-   619 ;;		None
-   620 ;; Return value:  Size  Location     Type
-   621 ;;                  1    wreg      void 
-   622 ;; Registers used:
-   623 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-   624 ;; Tracked objects:
-   625 ;;		On entry : 0/0
-   626 ;;		On exit  : 0/0
-   627 ;;		Unchanged: 0/0
-   628 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   542                           ;16f1825_uart_lib.h: 3: APFCON0bits.RXDTSEL = 0;
+   543                           
+   544                           ;incstack = 0
+   545                           ; Regs used in _uart_init: []
+   546  01C6  0022               	movlb	2	; select bank2
+   547  01C7  139D               	bcf	29,7	;volatile
+   548                           
+   549                           ;16f1825_uart_lib.h: 4: APFCON0bits.TXCKSEL = 0;
+   550  01C8  111D               	bcf	29,2	;volatile
+   551                           
+   552                           ;16f1825_uart_lib.h: 7: TXSTAbits.TX9 = 0;
+   553  01C9  0023               	movlb	3	; select bank3
+   554  01CA  131E               	bcf	30,6	;volatile
+   555                           
+   556                           ;16f1825_uart_lib.h: 8: TXSTAbits.TXEN = 1;
+   557  01CB  169E               	bsf	30,5	;volatile
+   558                           
+   559                           ;16f1825_uart_lib.h: 9: TXSTAbits.SYNC = 0;
+   560  01CC  121E               	bcf	30,4	;volatile
+   561                           
+   562                           ;16f1825_uart_lib.h: 10: TXSTAbits.SENDB = 0;
+   563  01CD  119E               	bcf	30,3	;volatile
+   564                           
+   565                           ;16f1825_uart_lib.h: 11: TXSTAbits.BRGH = 0;
+   566  01CE  111E               	bcf	30,2	;volatile
+   567                           
+   568                           ;16f1825_uart_lib.h: 14: RCSTAbits.SPEN = 1;
+   569  01CF  179D               	bsf	29,7	;volatile
+   570                           
+   571                           ;16f1825_uart_lib.h: 15: RCSTAbits.RX9 = 0;
+   572  01D0  131D               	bcf	29,6	;volatile
+   573                           
+   574                           ;16f1825_uart_lib.h: 16: RCSTAbits.CREN = 1;
+   575  01D1  161D               	bsf	29,4	;volatile
+   576                           
+   577                           ;16f1825_uart_lib.h: 17: RCSTAbits.FERR = 0;
+   578  01D2  111D               	bcf	29,2	;volatile
+   579                           
+   580                           ;16f1825_uart_lib.h: 18: RCSTAbits.OERR = 0;
+   581  01D3  109D               	bcf	29,1	;volatile
+   582                           
+   583                           ;16f1825_uart_lib.h: 21: BAUDCONbits.ABDOVF = 1;
+   584  01D4  179F               	bsf	31,7	;volatile
+   585                           
+   586                           ;16f1825_uart_lib.h: 22: BAUDCONbits.RCIDL = 0;
+   587  01D5  131F               	bcf	31,6	;volatile
+   588                           
+   589                           ;16f1825_uart_lib.h: 23: BAUDCONbits.SCKP = 0;
+   590  01D6  121F               	bcf	31,4	;volatile
+   591                           
+   592                           ;16f1825_uart_lib.h: 24: BAUDCONbits.BRG16 = 0;
+   593  01D7  119F               	bcf	31,3	;volatile
+   594                           
+   595                           ;16f1825_uart_lib.h: 25: BAUDCONbits.WUE = 0;
+   596  01D8  109F               	bcf	31,1	;volatile
+   597                           
+   598                           ;16f1825_uart_lib.h: 26: BAUDCONbits.ABDEN = 0;
+   599  01D9  101F               	bcf	31,0	;volatile
+   600                           
+   601                           ;16f1825_uart_lib.h: 32: PIE1bits.RCIE = 1;
+   602  01DA  0021               	movlb	1	; select bank1
+   603  01DB  1691               	bsf	17,5	;volatile
+   604                           
+   605                           ;16f1825_uart_lib.h: 33: INTCONbits.GIE = 1;
+   606  01DC  178B               	bsf	11,7	;volatile
+   607                           
+   608                           ;16f1825_uart_lib.h: 34: INTCONbits.PEIE = 1;
+   609  01DD  170B               	bsf	11,6	;volatile
+   610  01DE  0008               	return
+   611  01DF                     __end_of_uart_init:	
+   612                           
+   613                           	psect	text2
+   614  01A9                     __ptext2:	
+   615 ;; *************** function _baudrate *****************
+   616 ;; Defined at:
+   617 ;;		line 38 in file "16f1825_uart_lib.h"
+   618 ;; Parameters:    Size  Location     Type
+   619 ;;  baudrate        4    0[BANK0 ] long 
+   620 ;; Auto vars:     Size  Location     Type
+   621 ;;		None
+   622 ;; Return value:  Size  Location     Type
+   623 ;;                  1    wreg      void 
+   624 ;; Registers used:
+   625 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   626 ;; Tracked objects:
+   627 ;;		On entry : 0/0
+   628 ;;		On exit  : 0/0
+   629 ;;		Unchanged: 0/0
+   630 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-   629 ;;      Params:         0       4       0       0       0       0       0       0       0       0       0       0       
+   631 ;;      Params:         0       4       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   630 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   632 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   631 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   633 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   632 ;;      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       
+   634 ;;      Totals:         0       4       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   633 ;;Total ram usage:        4 bytes
-   634 ;; Hardware stack levels used:    1
-   635 ;; Hardware stack levels required when called:    2
-   636 ;; This function calls:
-   637 ;;		Nothing
-   638 ;; This function is called by:
-   639 ;;		_main
-   640 ;; This function uses a non-reentrant model
-   641 ;;
-   642                           
-   643                           
-   644                           ;psect for function _baudrate
-   645  01A7                     _baudrate:	
-   646                           
-   647                           ;16f1825_uart_lib.h: 40: switch(baudrate){
+   635 ;;Total ram usage:        4 bytes
+   636 ;; Hardware stack levels used:    1
+   637 ;; Hardware stack levels required when called:    2
+   638 ;; This function calls:
+   639 ;;		Nothing
+   640 ;; This function is called by:
+   641 ;;		_main
+   642 ;; This function uses a non-reentrant model
+   643 ;;
+   644                           
+   645                           
+   646                           ;psect for function _baudrate
+   647  01A9                     _baudrate:	
    648                           
-   649                           ;incstack = 0
-   650                           ; Regs used in _baudrate: [wreg-fsr0h+status,2+status,0]
-   651  01A7  29AE               	goto	l1130
-   652  01A8                     l65:	
-   653                           ;16f1825_uart_lib.h: 41: case 9600 :
-   654                           
-   655                           
-   656                           ;16f1825_uart_lib.h: 42: SPBRG = 25;
-   657  01A8  3000               	movlw	0
-   658  01A9  0023               	movlb	3	; select bank3
-   659  01AA  009C               	movwf	28	;volatile
-   660  01AB  3019               	movlw	25
-   661  01AC  009B               	movwf	27	;volatile
-   662                           
-   663                           ;16f1825_uart_lib.h: 44: }
+   649                           ;16f1825_uart_lib.h: 40: switch(baudrate){
+   650                           
+   651                           ;incstack = 0
+   652                           ; Regs used in _baudrate: [wreg-fsr0h+status,2+status,0]
+   653  01A9  29B0               	goto	l1130
+   654  01AA                     l65:	
+   655                           ;16f1825_uart_lib.h: 41: case 9600 :
+   656                           
+   657                           
+   658                           ;16f1825_uart_lib.h: 42: SPBRG = 25;
+   659  01AA  3000               	movlw	0
+   660  01AB  0023               	movlb	3	; select bank3
+   661  01AC  009C               	movwf	28	;volatile
+   662  01AD  3019               	movlw	25
+   663  01AE  009B               	movwf	27	;volatile
    664                           
-   665                           ;16f1825_uart_lib.h: 43: break;
-   666  01AD  0008               	return
-   667  01AE                     l1130:	
-   668                           
-   669                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 2 sub-sw
+   665                           ;16f1825_uart_lib.h: 44: }
+   666                           
+   667                           ;16f1825_uart_lib.h: 43: break;
+   668  01AF  0008               	return
+   669  01B0                     l1130:	
+   670                           
+   671                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 2 sub-sw
       +                          itches
-   670                           ; Switch size 1, requested type "space"
-   671                           ; Number of cases is 1, Range of values is 0 to 0
-   672                           ; switch strategies available:
-   673                           ; Name         Instructions Cycles
-   674                           ; simple_byte            4     3 (average)
-   675                           ; direct_byte            8     6 (fixed)
-   676                           ; jumptable            260     6 (fixed)
-   677                           ;	Chosen strategy is simple_byte
-   678  01AE  0020               	movlb	0	; select bank0
-   679  01AF  0823               	movf	baudrate@baudrate+3,w
-   680  01B0  3A00               	xorlw	0	; case 0
-   681  01B1  1903               	skipnz
-   682  01B2  29BE               	goto	l1334
-   683  01B3  29C3               	goto	l67
-   684  01B4                     l1332:	
-   685                           
-   686                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+   672                           ; Switch size 1, requested type "space"
+   673                           ; Number of cases is 1, Range of values is 0 to 0
+   674                           ; switch strategies available:
+   675                           ; Name         Instructions Cycles
+   676                           ; simple_byte            4     3 (average)
+   677                           ; direct_byte            8     6 (fixed)
+   678                           ; jumptable            260     6 (fixed)
+   679                           ;	Chosen strategy is simple_byte
+   680  01B0  0020               	movlb	0	; select bank0
+   681  01B1  0823               	movf	baudrate@baudrate+3,w
+   682  01B2  3A00               	xorlw	0	; case 0
+   683  01B3  1903               	skipnz
+   684  01B4  29C0               	goto	l1334
+   685  01B5  29C5               	goto	l67
+   686  01B6                     l1332:	
+   687                           
+   688                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-   687                           ; Switch size 1, requested type "space"
-   688                           ; Number of cases is 1, Range of values is 37 to 37
-   689                           ; switch strategies available:
-   690                           ; Name         Instructions Cycles
-   691                           ; simple_byte            4     3 (average)
-   692                           ; direct_byte           11     9 (fixed)
-   693                           ; jumptable            263     9 (fixed)
-   694                           ;	Chosen strategy is simple_byte
-   695  01B4  0821               	movf	baudrate@baudrate+1,w
-   696  01B5  3A25               	xorlw	37	; case 37
-   697  01B6  1903               	skipnz
-   698  01B7  29B9               	goto	l1336
-   699  01B8  29C3               	goto	l67
-   700  01B9                     l1336:	
-   701                           
-   702                           ; Switch size 1, requested type "space"
-   703                           ; Number of cases is 1, Range of values is 128 to 128
-   704                           ; switch strategies available:
-   705                           ; Name         Instructions Cycles
-   706                           ; simple_byte            4     3 (average)
-   707                           ; direct_byte           11     9 (fixed)
-   708                           ; jumptable            263     9 (fixed)
-   709                           ;	Chosen strategy is simple_byte
-   710  01B9  0820               	movf	baudrate@baudrate,w
-   711  01BA  3A80               	xorlw	128	; case 128
-   712  01BB  1903               	skipnz
-   713  01BC  29A8               	goto	l65
-   714  01BD  29C3               	goto	l67
-   715  01BE                     l1334:	
-   716                           
-   717                           ; Switch size 1, requested type "space"
-   718                           ; Number of cases is 1, Range of values is 0 to 0
-   719                           ; switch strategies available:
-   720                           ; Name         Instructions Cycles
-   721                           ; simple_byte            4     3 (average)
-   722                           ; direct_byte            8     6 (fixed)
-   723                           ; jumptable            260     6 (fixed)
-   724                           ;	Chosen strategy is simple_byte
-   725  01BE  0822               	movf	baudrate@baudrate+2,w
-   726  01BF  3A00               	xorlw	0	; case 0
-   727  01C0  1903               	skipnz
-   728  01C1  29B4               	goto	l1332
-   729  01C2  29C3               	goto	l67
-   730  01C3                     l67:	
-   731  01C3  0008               	return
-   732  01C4                     __end_of_baudrate:	
-   733                           
-   734                           	psect	text3
-   735  01F2                     __ptext3:	
-   736 ;; *************** function _adc_read *****************
-   737 ;; Defined at:
-   738 ;;		line 57 in file "16f1825_adc_lib.h"
-   739 ;; Parameters:    Size  Location     Type
-   740 ;;		None
-   741 ;; Auto vars:     Size  Location     Type
-   742 ;;  adc_value       2    3[BANK0 ] int 
-   743 ;; Return value:  Size  Location     Type
-   744 ;;                  2    0[BANK0 ] int 
-   745 ;; Registers used:
-   746 ;;		wreg
-   747 ;; Tracked objects:
-   748 ;;		On entry : 0/0
-   749 ;;		On exit  : 0/0
-   750 ;;		Unchanged: 0/0
-   751 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   689                           ; Switch size 1, requested type "space"
+   690                           ; Number of cases is 1, Range of values is 37 to 37
+   691                           ; switch strategies available:
+   692                           ; Name         Instructions Cycles
+   693                           ; simple_byte            4     3 (average)
+   694                           ; direct_byte           11     9 (fixed)
+   695                           ; jumptable            263     9 (fixed)
+   696                           ;	Chosen strategy is simple_byte
+   697  01B6  0821               	movf	baudrate@baudrate+1,w
+   698  01B7  3A25               	xorlw	37	; case 37
+   699  01B8  1903               	skipnz
+   700  01B9  29BB               	goto	l1336
+   701  01BA  29C5               	goto	l67
+   702  01BB                     l1336:	
+   703                           
+   704                           ; Switch size 1, requested type "space"
+   705                           ; Number of cases is 1, Range of values is 128 to 128
+   706                           ; switch strategies available:
+   707                           ; Name         Instructions Cycles
+   708                           ; simple_byte            4     3 (average)
+   709                           ; direct_byte           11     9 (fixed)
+   710                           ; jumptable            263     9 (fixed)
+   711                           ;	Chosen strategy is simple_byte
+   712  01BB  0820               	movf	baudrate@baudrate,w
+   713  01BC  3A80               	xorlw	128	; case 128
+   714  01BD  1903               	skipnz
+   715  01BE  29AA               	goto	l65
+   716  01BF  29C5               	goto	l67
+   717  01C0                     l1334:	
+   718                           
+   719                           ; Switch size 1, requested type "space"
+   720                           ; Number of cases is 1, Range of values is 0 to 0
+   721                           ; switch strategies available:
+   722                           ; Name         Instructions Cycles
+   723                           ; simple_byte            4     3 (average)
+   724                           ; direct_byte            8     6 (fixed)
+   725                           ; jumptable            260     6 (fixed)
+   726                           ;	Chosen strategy is simple_byte
+   727  01C0  0822               	movf	baudrate@baudrate+2,w
+   728  01C1  3A00               	xorlw	0	; case 0
+   729  01C2  1903               	skipnz
+   730  01C3  29B6               	goto	l1332
+   731  01C4  29C5               	goto	l67
+   732  01C5                     l67:	
+   733  01C5  0008               	return
+   734  01C6                     __end_of_baudrate:	
+   735                           
+   736                           	psect	text3
+   737  01F4                     __ptext3:	
+   738 ;; *************** function _adc_read *****************
+   739 ;; Defined at:
+   740 ;;		line 57 in file "16f1825_adc_lib.h"
+   741 ;; Parameters:    Size  Location     Type
+   742 ;;		None
+   743 ;; Auto vars:     Size  Location     Type
+   744 ;;  adc_value       2    3[BANK0 ] int 
+   745 ;; Return value:  Size  Location     Type
+   746 ;;                  2    0[BANK0 ] int 
+   747 ;; Registers used:
+   748 ;;		wreg
+   749 ;; Tracked objects:
+   750 ;;		On entry : 0/0
+   751 ;;		On exit  : 0/0
+   752 ;;		Unchanged: 0/0
+   753 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-   752 ;;      Params:         0       2       0       0       0       0       0       0       0       0       0       0       
+   754 ;;      Params:         0       2       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   753 ;;      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       
+   755 ;;      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   754 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
+   756 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   755 ;;      Totals:         0       5       0       0       0       0       0       0       0       0       0       0       
+   757 ;;      Totals:         0       5       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   756 ;;Total ram usage:        5 bytes
-   757 ;; Hardware stack levels used:    1
-   758 ;; Hardware stack levels required when called:    2
-   759 ;; This function calls:
-   760 ;;		Nothing
-   761 ;; This function is called by:
-   762 ;;		_main
-   763 ;; This function uses a non-reentrant model
-   764 ;;
-   765                           
-   766                           
-   767                           ;psect for function _adc_read
-   768  01F2                     _adc_read:	
-   769                           
-   770                           ;16f1825_adc_lib.h: 58: int adc_value;
-   771                           ;16f1825_adc_lib.h: 60: ADCON0bits.GO_nDONE = 1;
-   772                           
-   773                           ;incstack = 0
-   774                           ; Regs used in _adc_read: [wreg]
-   775  01F2  0021               	movlb	1	; select bank1
-   776  01F3  149D               	bsf	29,1	;volatile
-   777                           
-   778                           ;16f1825_adc_lib.h: 61: _delay((unsigned long)((10)*(16000000L/4000000.0)));
-   779  01F4  300D               	movlw	13
-   780  01F5  0020               	movlb	0	; select bank0
-   781  01F6  00A2               	movwf	??_adc_read
-   782  01F7                     u247:	
-   783  01F7  0BA2               	decfsz	??_adc_read,f
-   784  01F8  29F7               	goto	u247
-   785                           
-   786                           ;16f1825_adc_lib.h: 62: adc_value = (ADRESH<<8) +ADRESL;
-   787  01F9  0021               	movlb	1	; select bank1
-   788  01FA  081C               	movf	28,w	;volatile
-   789  01FB  0020               	movlb	0	; select bank0
-   790  01FC  00A4               	movwf	adc_read@adc_value+1
-   791  01FD  0021               	movlb	1	; select bank1
-   792  01FE  081B               	movf	27,w	;volatile
-   793  01FF  0020               	movlb	0	; select bank0
-   794  0200  00A3               	movwf	adc_read@adc_value
-   795                           
-   796                           ;16f1825_adc_lib.h: 64: return adc_value;
-   797  0201  0824               	movf	adc_read@adc_value+1,w
-   798  0202  00A1               	movwf	?_adc_read+1
-   799  0203  0823               	movf	adc_read@adc_value,w
-   800  0204  00A0               	movwf	?_adc_read
-   801  0205  0008               	return
-   802  0206                     __end_of_adc_read:	
-   803                           
-   804                           	psect	text4
-   805  0175                     __ptext4:	
-   806 ;; *************** function _adc_pin_select *****************
-   807 ;; Defined at:
-   808 ;;		line 15 in file "16f1825_adc_lib.h"
-   809 ;; Parameters:    Size  Location     Type
-   810 ;;  pin_number      2    0[BANK0 ] int 
-   811 ;; Auto vars:     Size  Location     Type
-   812 ;;		None
-   813 ;; Return value:  Size  Location     Type
-   814 ;;                  1    wreg      void 
-   815 ;; Registers used:
-   816 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-   817 ;; Tracked objects:
-   818 ;;		On entry : 0/0
-   819 ;;		On exit  : 0/0
-   820 ;;		Unchanged: 0/0
-   821 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   758 ;;Total ram usage:        5 bytes
+   759 ;; Hardware stack levels used:    1
+   760 ;; Hardware stack levels required when called:    2
+   761 ;; This function calls:
+   762 ;;		Nothing
+   763 ;; This function is called by:
+   764 ;;		_main
+   765 ;; This function uses a non-reentrant model
+   766 ;;
+   767                           
+   768                           
+   769                           ;psect for function _adc_read
+   770  01F4                     _adc_read:	
+   771                           
+   772                           ;16f1825_adc_lib.h: 58: int adc_value;
+   773                           ;16f1825_adc_lib.h: 60: ADCON0bits.GO_nDONE = 1;
+   774                           
+   775                           ;incstack = 0
+   776                           ; Regs used in _adc_read: [wreg]
+   777  01F4  0021               	movlb	1	; select bank1
+   778  01F5  149D               	bsf	29,1	;volatile
+   779                           
+   780                           ;16f1825_adc_lib.h: 61: _delay((unsigned long)((10)*(16000000L/4000000.0)));
+   781  01F6  300D               	movlw	13
+   782  01F7  0020               	movlb	0	; select bank0
+   783  01F8  00A2               	movwf	??_adc_read
+   784  01F9                     u247:	
+   785  01F9  0BA2               	decfsz	??_adc_read,f
+   786  01FA  29F9               	goto	u247
+   787                           
+   788                           ;16f1825_adc_lib.h: 62: adc_value = (ADRESH<<8) +ADRESL;
+   789  01FB  0021               	movlb	1	; select bank1
+   790  01FC  081C               	movf	28,w	;volatile
+   791  01FD  0020               	movlb	0	; select bank0
+   792  01FE  00A4               	movwf	adc_read@adc_value+1
+   793  01FF  0021               	movlb	1	; select bank1
+   794  0200  081B               	movf	27,w	;volatile
+   795  0201  0020               	movlb	0	; select bank0
+   796  0202  00A3               	movwf	adc_read@adc_value
+   797                           
+   798                           ;16f1825_adc_lib.h: 64: return adc_value;
+   799  0203  0824               	movf	adc_read@adc_value+1,w
+   800  0204  00A1               	movwf	?_adc_read+1
+   801  0205  0823               	movf	adc_read@adc_value,w
+   802  0206  00A0               	movwf	?_adc_read
+   803  0207  0008               	return
+   804  0208                     __end_of_adc_read:	
+   805                           
+   806                           	psect	text4
+   807  0177                     __ptext4:	
+   808 ;; *************** function _adc_pin_select *****************
+   809 ;; Defined at:
+   810 ;;		line 15 in file "16f1825_adc_lib.h"
+   811 ;; Parameters:    Size  Location     Type
+   812 ;;  pin_number      2    0[BANK0 ] int 
+   813 ;; Auto vars:     Size  Location     Type
+   814 ;;		None
+   815 ;; Return value:  Size  Location     Type
+   816 ;;                  1    wreg      void 
+   817 ;; Registers used:
+   818 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   819 ;; Tracked objects:
+   820 ;;		On entry : 0/0
+   821 ;;		On exit  : 0/0
+   822 ;;		Unchanged: 0/0
+   823 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-   822 ;;      Params:         0       2       0       0       0       0       0       0       0       0       0       0       
+   824 ;;      Params:         0       2       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   823 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   825 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   824 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   826 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   825 ;;      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       
+   827 ;;      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       
       +0       0
-   826 ;;Total ram usage:        2 bytes
-   827 ;; Hardware stack levels used:    1
-   828 ;; Hardware stack levels required when called:    2
-   829 ;; This function calls:
-   830 ;;		Nothing
-   831 ;; This function is called by:
-   832 ;;		_main
-   833 ;; This function uses a non-reentrant model
-   834 ;;
-   835                           
-   836                           
-   837                           ;psect for function _adc_pin_select
-   838  0175                     _adc_pin_select:	
-   839                           
-   840                           ;16f1825_adc_lib.h: 17: switch(pin_number){
+   828 ;;Total ram usage:        2 bytes
+   829 ;; Hardware stack levels used:    1
+   830 ;; Hardware stack levels required when called:    2
+   831 ;; This function calls:
+   832 ;;		Nothing
+   833 ;; This function is called by:
+   834 ;;		_main
+   835 ;; This function uses a non-reentrant model
+   836 ;;
+   837                           
+   838                           
+   839                           ;psect for function _adc_pin_select
+   840  0177                     _adc_pin_select:	
    841                           
-   842                           ;incstack = 0
-   843                           ; Regs used in _adc_pin_select: [wreg-fsr0h+status,2+status,0]
-   844  0175  2996               	goto	l1178
-   845  0176                     l1160:	
-   846                           ;16f1825_adc_lib.h: 18: case 0 :
-   847                           
-   848                           
-   849                           ;16f1825_adc_lib.h: 19: ADCON0 = 0b00000001;
-   850  0176  3001               	movlw	1
-   851  0177  0021               	movlb	1	; select bank1
-   852  0178  009D               	movwf	29	;volatile
-   853                           
-   854                           ;16f1825_adc_lib.h: 20: break ;
-   855  0179  0008               	return
-   856  017A                     l1162:	
-   857                           ;16f1825_adc_lib.h: 22: case 1 :
-   858                           
-   859                           
-   860                           ;16f1825_adc_lib.h: 23: ADCON0 = 0b00000101;
-   861  017A  3005               	movlw	5
-   862  017B  0021               	movlb	1	; select bank1
-   863  017C  009D               	movwf	29	;volatile
-   864                           
-   865                           ;16f1825_adc_lib.h: 24: break ;
-   866  017D  0008               	return
-   867  017E                     l1164:	
-   868                           ;16f1825_adc_lib.h: 26: case 2 :
-   869                           
-   870                           
-   871                           ;16f1825_adc_lib.h: 27: ADCON0 = 0b00001001;
-   872  017E  3009               	movlw	9
-   873  017F  0021               	movlb	1	; select bank1
-   874  0180  009D               	movwf	29	;volatile
-   875                           
-   876                           ;16f1825_adc_lib.h: 28: break ;
-   877  0181  0008               	return
-   878  0182                     l1166:	
-   879                           ;16f1825_adc_lib.h: 30: case 3 :
-   880                           
-   881                           
-   882                           ;16f1825_adc_lib.h: 31: ADCON0 = 0b00001101;
-   883  0182  300D               	movlw	13
-   884  0183  0021               	movlb	1	; select bank1
-   885  0184  009D               	movwf	29	;volatile
-   886                           
-   887                           ;16f1825_adc_lib.h: 32: break ;
-   888  0185  0008               	return
-   889  0186                     l1168:	
-   890                           ;16f1825_adc_lib.h: 34: case 4 :
-   891                           
-   892                           
-   893                           ;16f1825_adc_lib.h: 35: ADCON0 = 0b00010001;
-   894  0186  3011               	movlw	17
-   895  0187  0021               	movlb	1	; select bank1
-   896  0188  009D               	movwf	29	;volatile
-   897                           
-   898                           ;16f1825_adc_lib.h: 36: break ;
-   899  0189  0008               	return
-   900  018A                     l1170:	
-   901                           ;16f1825_adc_lib.h: 38: case 5 :
-   902                           
-   903                           
-   904                           ;16f1825_adc_lib.h: 39: ADCON0 = 0b00010101;
-   905  018A  3015               	movlw	21
-   906  018B  0021               	movlb	1	; select bank1
-   907  018C  009D               	movwf	29	;volatile
-   908                           
-   909                           ;16f1825_adc_lib.h: 40: break ;
-   910  018D  0008               	return
-   911  018E                     l1172:	
-   912                           ;16f1825_adc_lib.h: 42: case 6 :
-   913                           
-   914                           
-   915                           ;16f1825_adc_lib.h: 43: ADCON0 = 0b00011001;
-   916  018E  3019               	movlw	25
-   917  018F  0021               	movlb	1	; select bank1
-   918  0190  009D               	movwf	29	;volatile
-   919                           
-   920                           ;16f1825_adc_lib.h: 44: break ;
-   921  0191  0008               	return
-   922  0192                     l1174:	
-   923                           ;16f1825_adc_lib.h: 46: case 7 :
-   924                           
-   925                           
-   926                           ;16f1825_adc_lib.h: 47: ADCON0 = 0b00011101;
-   927  0192  301D               	movlw	29
-   928  0193  0021               	movlb	1	; select bank1
-   929  0194  009D               	movwf	29	;volatile
-   930                           
-   931                           ;16f1825_adc_lib.h: 51: }
+   842                           ;16f1825_adc_lib.h: 17: switch(pin_number){
+   843                           
+   844                           ;incstack = 0
+   845                           ; Regs used in _adc_pin_select: [wreg-fsr0h+status,2+status,0]
+   846  0177  2998               	goto	l1178
+   847  0178                     l1160:	
+   848                           ;16f1825_adc_lib.h: 18: case 0 :
+   849                           
+   850                           
+   851                           ;16f1825_adc_lib.h: 19: ADCON0 = 0b00000001;
+   852  0178  3001               	movlw	1
+   853  0179  0021               	movlb	1	; select bank1
+   854  017A  009D               	movwf	29	;volatile
+   855                           
+   856                           ;16f1825_adc_lib.h: 20: break ;
+   857  017B  0008               	return
+   858  017C                     l1162:	
+   859                           ;16f1825_adc_lib.h: 22: case 1 :
+   860                           
+   861                           
+   862                           ;16f1825_adc_lib.h: 23: ADCON0 = 0b00000101;
+   863  017C  3005               	movlw	5
+   864  017D  0021               	movlb	1	; select bank1
+   865  017E  009D               	movwf	29	;volatile
+   866                           
+   867                           ;16f1825_adc_lib.h: 24: break ;
+   868  017F  0008               	return
+   869  0180                     l1164:	
+   870                           ;16f1825_adc_lib.h: 26: case 2 :
+   871                           
+   872                           
+   873                           ;16f1825_adc_lib.h: 27: ADCON0 = 0b00001001;
+   874  0180  3009               	movlw	9
+   875  0181  0021               	movlb	1	; select bank1
+   876  0182  009D               	movwf	29	;volatile
+   877                           
+   878                           ;16f1825_adc_lib.h: 28: break ;
+   879  0183  0008               	return
+   880  0184                     l1166:	
+   881                           ;16f1825_adc_lib.h: 30: case 3 :
+   882                           
+   883                           
+   884                           ;16f1825_adc_lib.h: 31: ADCON0 = 0b00001101;
+   885  0184  300D               	movlw	13
+   886  0185  0021               	movlb	1	; select bank1
+   887  0186  009D               	movwf	29	;volatile
+   888                           
+   889                           ;16f1825_adc_lib.h: 32: break ;
+   890  0187  0008               	return
+   891  0188                     l1168:	
+   892                           ;16f1825_adc_lib.h: 34: case 4 :
+   893                           
+   894                           
+   895                           ;16f1825_adc_lib.h: 35: ADCON0 = 0b00010001;
+   896  0188  3011               	movlw	17
+   897  0189  0021               	movlb	1	; select bank1
+   898  018A  009D               	movwf	29	;volatile
+   899                           
+   900                           ;16f1825_adc_lib.h: 36: break ;
+   901  018B  0008               	return
+   902  018C                     l1170:	
+   903                           ;16f1825_adc_lib.h: 38: case 5 :
+   904                           
+   905                           
+   906                           ;16f1825_adc_lib.h: 39: ADCON0 = 0b00010101;
+   907  018C  3015               	movlw	21
+   908  018D  0021               	movlb	1	; select bank1
+   909  018E  009D               	movwf	29	;volatile
+   910                           
+   911                           ;16f1825_adc_lib.h: 40: break ;
+   912  018F  0008               	return
+   913  0190                     l1172:	
+   914                           ;16f1825_adc_lib.h: 42: case 6 :
+   915                           
+   916                           
+   917                           ;16f1825_adc_lib.h: 43: ADCON0 = 0b00011001;
+   918  0190  3019               	movlw	25
+   919  0191  0021               	movlb	1	; select bank1
+   920  0192  009D               	movwf	29	;volatile
+   921                           
+   922                           ;16f1825_adc_lib.h: 44: break ;
+   923  0193  0008               	return
+   924  0194                     l1174:	
+   925                           ;16f1825_adc_lib.h: 46: case 7 :
+   926                           
+   927                           
+   928                           ;16f1825_adc_lib.h: 47: ADCON0 = 0b00011101;
+   929  0194  301D               	movlw	29
+   930  0195  0021               	movlb	1	; select bank1
+   931  0196  009D               	movwf	29	;volatile
    932                           
-   933                           ;16f1825_adc_lib.h: 48: break ;
-   934  0195  0008               	return
-   935  0196                     l1178:	
-   936                           
-   937                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+   933                           ;16f1825_adc_lib.h: 51: }
+   934                           
+   935                           ;16f1825_adc_lib.h: 48: break ;
+   936  0197  0008               	return
+   937  0198                     l1178:	
+   938                           
+   939                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-   938                           ; Switch size 1, requested type "space"
-   939                           ; Number of cases is 1, Range of values is 0 to 0
-   940                           ; switch strategies available:
-   941                           ; Name         Instructions Cycles
-   942                           ; simple_byte            4     3 (average)
-   943                           ; direct_byte            8     6 (fixed)
-   944                           ; jumptable            260     6 (fixed)
-   945                           ;	Chosen strategy is simple_byte
-   946  0196  0020               	movlb	0	; select bank0
-   947  0197  0821               	movf	adc_pin_select@pin_number+1,w
-   948  0198  3A00               	xorlw	0	; case 0
-   949  0199  1903               	skipnz
-   950  019A  299C               	goto	l1338
-   951  019B  29A6               	goto	l95
-   952  019C                     l1338:	
-   953                           
-   954                           ; Switch size 1, requested type "space"
-   955                           ; Number of cases is 8, Range of values is 0 to 7
-   956                           ; switch strategies available:
-   957                           ; Name         Instructions Cycles
-   958                           ; direct_byte           22     6 (fixed)
-   959                           ; simple_byte           25    13 (average)
-   960                           ; jumptable            260     6 (fixed)
-   961                           ;	Chosen strategy is direct_byte
-   962  019C  0820               	movf	adc_pin_select@pin_number,w
-   963  019D  0084               	movwf	4
-   964  019E  3008               	movlw	8
-   965  019F  0204               	subwf	4,w
-   966  01A0  1803               	skipnc
-   967  01A1  0008               	return
-   968  01A2  3182               	movlp	high S1340
-   969  01A3  3504               	lslf	4,w
-   970  01A4  3E06               	addlw	low S1340
-   971  01A5  0082               	movwf	2
-   972  01A6                     l95:	
-   973  01A6  0008               	return
-   974  01A7                     __end_of_adc_pin_select:	
-   975                           
-   976                           	psect	swtext1
-   977  0206                     __pswtext1:	
-   978  0206                     S1340:	
-   979  0206  3181  2976         	ljmp	l1160
-   980  0208  3181  297A         	ljmp	l1162
-   981  020A  3181  297E         	ljmp	l1164
-   982  020C  3181  2982         	ljmp	l1166
-   983  020E  3181  2986         	ljmp	l1168
-   984  0210  3181  298A         	ljmp	l1170
-   985  0212  3181  298E         	ljmp	l1172
-   986  0214  3181  2992         	ljmp	l1174
-   987                           
-   988                           	psect	text5
-   989  01DD                     __ptext5:	
-   990 ;; *************** function _adc_init *****************
-   991 ;; Defined at:
-   992 ;;		line 1 in file "16f1825_adc_lib.h"
-   993 ;; Parameters:    Size  Location     Type
-   994 ;;		None
-   995 ;; Auto vars:     Size  Location     Type
+   940                           ; Switch size 1, requested type "space"
+   941                           ; Number of cases is 1, Range of values is 0 to 0
+   942                           ; switch strategies available:
+   943                           ; Name         Instructions Cycles
+   944                           ; simple_byte            4     3 (average)
+   945                           ; direct_byte            8     6 (fixed)
+   946                           ; jumptable            260     6 (fixed)
+   947                           ;	Chosen strategy is simple_byte
+   948  0198  0020               	movlb	0	; select bank0
+   949  0199  0821               	movf	adc_pin_select@pin_number+1,w
+   950  019A  3A00               	xorlw	0	; case 0
+   951  019B  1903               	skipnz
+   952  019C  299E               	goto	l1338
+   953  019D  29A8               	goto	l95
+   954  019E                     l1338:	
+   955                           
+   956                           ; Switch size 1, requested type "space"
+   957                           ; Number of cases is 8, Range of values is 0 to 7
+   958                           ; switch strategies available:
+   959                           ; Name         Instructions Cycles
+   960                           ; direct_byte           22     6 (fixed)
+   961                           ; simple_byte           25    13 (average)
+   962                           ; jumptable            260     6 (fixed)
+   963                           ;	Chosen strategy is direct_byte
+   964  019E  0820               	movf	adc_pin_select@pin_number,w
+   965  019F  0084               	movwf	4
+   966  01A0  3008               	movlw	8
+   967  01A1  0204               	subwf	4,w
+   968  01A2  1803               	skipnc
+   969  01A3  0008               	return
+   970  01A4  3182               	movlp	high S1340
+   971  01A5  3504               	lslf	4,w
+   972  01A6  3E08               	addlw	low S1340
+   973  01A7  0082               	movwf	2
+   974  01A8                     l95:	
+   975  01A8  0008               	return
+   976  01A9                     __end_of_adc_pin_select:	
+   977                           
+   978                           	psect	swtext1
+   979  0208                     __pswtext1:	
+   980  0208                     S1340:	
+   981  0208  3181  2978         	ljmp	l1160
+   982  020A  3181  297C         	ljmp	l1162
+   983  020C  3181  2980         	ljmp	l1164
+   984  020E  3181  2984         	ljmp	l1166
+   985  0210  3181  2988         	ljmp	l1168
+   986  0212  3181  298C         	ljmp	l1170
+   987  0214  3181  2990         	ljmp	l1172
+   988  0216  3181  2994         	ljmp	l1174
+   989                           
+   990                           	psect	text5
+   991  01DF                     __ptext5:	
+   992 ;; *************** function _adc_init *****************
+   993 ;; Defined at:
+   994 ;;		line 1 in file "16f1825_adc_lib.h"
+   995 ;; Parameters:    Size  Location     Type
    996 ;;		None
-   997 ;; Return value:  Size  Location     Type
-   998 ;;                  1    wreg      void 
-   999 ;; Registers used:
-  1000 ;;		wreg, status,2, status,0
-  1001 ;; Tracked objects:
-  1002 ;;		On entry : 0/0
-  1003 ;;		On exit  : 0/0
-  1004 ;;		Unchanged: 0/0
-  1005 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   997 ;; Auto vars:     Size  Location     Type
+   998 ;;		None
+   999 ;; Return value:  Size  Location     Type
+  1000 ;;                  1    wreg      void 
+  1001 ;; Registers used:
+  1002 ;;		wreg, status,2, status,0
+  1003 ;; Tracked objects:
+  1004 ;;		On entry : 0/0
+  1005 ;;		On exit  : 0/0
+  1006 ;;		Unchanged: 0/0
+  1007 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  1006 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1008 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1007 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1009 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1008 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
+  1010 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1009 ;;      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       
+  1011 ;;      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1010 ;;Total ram usage:        1 bytes
-  1011 ;; Hardware stack levels used:    1
-  1012 ;; Hardware stack levels required when called:    2
-  1013 ;; This function calls:
-  1014 ;;		Nothing
-  1015 ;; This function is called by:
-  1016 ;;		_main
-  1017 ;; This function uses a non-reentrant model
-  1018 ;;
-  1019                           
-  1020                           
-  1021                           ;psect for function _adc_init
-  1022  01DD                     _adc_init:	
-  1023                           
-  1024                           ;16f1825_adc_lib.h: 3: FVRCON = 0b11000010;
+  1012 ;;Total ram usage:        1 bytes
+  1013 ;; Hardware stack levels used:    1
+  1014 ;; Hardware stack levels required when called:    2
+  1015 ;; This function calls:
+  1016 ;;		Nothing
+  1017 ;; This function is called by:
+  1018 ;;		_main
+  1019 ;; This function uses a non-reentrant model
+  1020 ;;
+  1021                           
+  1022                           
+  1023                           ;psect for function _adc_init
+  1024  01DF                     _adc_init:	
   1025                           
-  1026                           ;incstack = 0
-  1027                           ; Regs used in _adc_init: [wreg+status,2+status,0]
-  1028  01DD  30C2               	movlw	194
-  1029  01DE  0022               	movlb	2	; select bank2
-  1030  01DF  0097               	movwf	23	;volatile
-  1031                           
-  1032                           ;16f1825_adc_lib.h: 5: ADCON1bits.ADFM = 1;
-  1033  01E0  0021               	movlb	1	; select bank1
-  1034  01E1  179E               	bsf	30,7	;volatile
-  1035                           
-  1036                           ;16f1825_adc_lib.h: 6: ADCON1bits.ADCS = 0b110;
-  1037  01E2  081E               	movf	30,w	;volatile
-  1038  01E3  398F               	andlw	-113
-  1039  01E4  3860               	iorlw	96
-  1040  01E5  009E               	movwf	30	;volatile
-  1041                           
-  1042                           ;16f1825_adc_lib.h: 7: ADCON1bits.ADNREF = 0;
-  1043  01E6  111E               	bcf	30,2	;volatile
-  1044                           
-  1045                           ;16f1825_adc_lib.h: 8: ADCON1bits.ADPREF = 0b11;
-  1046  01E7  3003               	movlw	3
-  1047  01E8  049E               	iorwf	30,f	;volatile
-  1048                           
-  1049                           ;16f1825_adc_lib.h: 9: _delay((unsigned long)((10)*(16000000L/4000000.0)));
-  1050  01E9  300D               	movlw	13
-  1051  01EA  0020               	movlb	0	; select bank0
-  1052  01EB  00A0               	movwf	??_adc_init
-  1053  01EC                     u257:	
-  1054  01EC  0BA0               	decfsz	??_adc_init,f
-  1055  01ED  29EC               	goto	u257
-  1056                           
-  1057                           ;16f1825_adc_lib.h: 10: ADCON0bits.ADON = 1;
-  1058  01EE  0021               	movlb	1	; select bank1
-  1059  01EF  141D               	bsf	29,0	;volatile
-  1060                           
-  1061                           ;16f1825_adc_lib.h: 11: ADCON0bits.GO_nDONE = 0;
-  1062  01F0  109D               	bcf	29,1	;volatile
-  1063  01F1  0008               	return
-  1064  01F2                     __end_of_adc_init:	
-  1065                           
-  1066                           	psect	intentry
-  1067  0004                     __pintentry:	
-  1068 ;; *************** function _uart *****************
-  1069 ;; Defined at:
-  1070 ;;		line 15 in file "Slave1.c"
-  1071 ;; Parameters:    Size  Location     Type
-  1072 ;;		None
-  1073 ;; Auto vars:     Size  Location     Type
+  1026                           ;16f1825_adc_lib.h: 3: FVRCON = 0b11000010;
+  1027                           
+  1028                           ;incstack = 0
+  1029                           ; Regs used in _adc_init: [wreg+status,2+status,0]
+  1030  01DF  30C2               	movlw	194
+  1031  01E0  0022               	movlb	2	; select bank2
+  1032  01E1  0097               	movwf	23	;volatile
+  1033                           
+  1034                           ;16f1825_adc_lib.h: 5: ADCON1bits.ADFM = 1;
+  1035  01E2  0021               	movlb	1	; select bank1
+  1036  01E3  179E               	bsf	30,7	;volatile
+  1037                           
+  1038                           ;16f1825_adc_lib.h: 6: ADCON1bits.ADCS = 0b110;
+  1039  01E4  081E               	movf	30,w	;volatile
+  1040  01E5  398F               	andlw	-113
+  1041  01E6  3860               	iorlw	96
+  1042  01E7  009E               	movwf	30	;volatile
+  1043                           
+  1044                           ;16f1825_adc_lib.h: 7: ADCON1bits.ADNREF = 0;
+  1045  01E8  111E               	bcf	30,2	;volatile
+  1046                           
+  1047                           ;16f1825_adc_lib.h: 8: ADCON1bits.ADPREF = 0b11;
+  1048  01E9  3003               	movlw	3
+  1049  01EA  049E               	iorwf	30,f	;volatile
+  1050                           
+  1051                           ;16f1825_adc_lib.h: 9: _delay((unsigned long)((10)*(16000000L/4000000.0)));
+  1052  01EB  300D               	movlw	13
+  1053  01EC  0020               	movlb	0	; select bank0
+  1054  01ED  00A0               	movwf	??_adc_init
+  1055  01EE                     u257:	
+  1056  01EE  0BA0               	decfsz	??_adc_init,f
+  1057  01EF  29EE               	goto	u257
+  1058                           
+  1059                           ;16f1825_adc_lib.h: 10: ADCON0bits.ADON = 1;
+  1060  01F0  0021               	movlb	1	; select bank1
+  1061  01F1  141D               	bsf	29,0	;volatile
+  1062                           
+  1063                           ;16f1825_adc_lib.h: 11: ADCON0bits.GO_nDONE = 0;
+  1064  01F2  109D               	bcf	29,1	;volatile
+  1065  01F3  0008               	return
+  1066  01F4                     __end_of_adc_init:	
+  1067                           
+  1068                           	psect	intentry
+  1069  0004                     __pintentry:	
+  1070 ;; *************** function _uart *****************
+  1071 ;; Defined at:
+  1072 ;;		line 15 in file "Slave1.c"
+  1073 ;; Parameters:    Size  Location     Type
   1074 ;;		None
-  1075 ;; Return value:  Size  Location     Type
-  1076 ;;                  1    wreg      void 
-  1077 ;; Registers used:
-  1078 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  1079 ;; Tracked objects:
-  1080 ;;		On entry : 0/0
-  1081 ;;		On exit  : 0/0
-  1082 ;;		Unchanged: 0/0
-  1083 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1075 ;; Auto vars:     Size  Location     Type
+  1076 ;;		None
+  1077 ;; Return value:  Size  Location     Type
+  1078 ;;                  1    wreg      void 
+  1079 ;; Registers used:
+  1080 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1081 ;; Tracked objects:
+  1082 ;;		On entry : 0/0
+  1083 ;;		On exit  : 0/0
+  1084 ;;		Unchanged: 0/0
+  1085 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  1084 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1086 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1085 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1087 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1086 ;;      Temps:          5       0       0       0       0       0       0       0       0       0       0       0       
+  1088 ;;      Temps:          5       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1087 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
+  1089 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1088 ;;Total ram usage:        5 bytes
-  1089 ;; Hardware stack levels used:    1
-  1090 ;; Hardware stack levels required when called:    1
-  1091 ;; This function calls:
-  1092 ;;		_uart_read
-  1093 ;;		_uart_write
-  1094 ;; This function is called by:
-  1095 ;;		Interrupt level 1
-  1096 ;; This function uses a non-reentrant model
-  1097 ;;
-  1098                           
-  1099  0004                     _uart:	
+  1090 ;;Total ram usage:        5 bytes
+  1091 ;; Hardware stack levels used:    1
+  1092 ;; Hardware stack levels required when called:    1
+  1093 ;; This function calls:
+  1094 ;;		_uart_read
+  1095 ;;		_uart_write
+  1096 ;; This function is called by:
+  1097 ;;		Interrupt level 1
+  1098 ;; This function uses a non-reentrant model
+  1099 ;;
   1100                           
-  1101                           ;incstack = 0
-  1102                           ; Regs used in _uart: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  1103  0004  147E               	bsf	126,0	;set compiler interrupt flag (level 1)
-  1104  0005  3180               	pagesel	$
-  1105  0006  0020               	movlb	0	; select bank0
-  1106  0007  087F               	movf	127,w
-  1107  0008  00F5               	movwf	??_uart+4
-  1108                           
-  1109                           ;Slave1.c: 16: if (RCIF){
-  1110  0009  1E91               	btfss	17,5	;volatile
-  1111  000A  2904               	goto	i1l114
-  1112                           
-  1113                           ;Slave1.c: 17: PIR1bits.RCIF = 0;
-  1114  000B  1291               	bcf	17,5	;volatile
-  1115                           
-  1116                           ;Slave1.c: 19: receive_data = uart_read();
-  1117  000C  3182  221D  3180   	fcall	_uart_read
-  1118  000F  00F1               	movwf	??_uart
-  1119  0010  01F2               	clrf	??_uart+1
-  1120  0011  0871               	movf	??_uart,w
-  1121  0012  00F6               	movwf	_receive_data
-  1122  0013  0872               	movf	??_uart+1,w
-  1123  0014  00F7               	movwf	_receive_data+1
-  1124                           
-  1125                           ;Slave1.c: 21: if(receive_data == 100 + slave_number){
-  1126  0015  3025               	movlw	low (_slave_number| (0+32768))
-  1127  0016  0084               	movwf	4
-  1128  0017  3082               	movlw	high (_slave_number| (0+32768))
-  1129  0018  0085               	movwf	5
-  1130  0019  3F00               	moviw [0]fsr0
-  1131  001A  00F1               	movwf	??_uart
-  1132  001B  3F01               	moviw [1]fsr0
-  1133  001C  00F2               	movwf	??_uart+1
-  1134  001D  0871               	movf	??_uart,w
-  1135  001E  3E64               	addlw	100
-  1136  001F  00F3               	movwf	??_uart+2
-  1137  0020  3000               	movlw	0
-  1138  0021  3D72               	addwfc	??_uart+1,w
-  1139  0022  00F4               	movwf	??_uart+3
-  1140  0023  0877               	movf	_receive_data+1,w
-  1141  0024  0674               	xorwf	??_uart+3,w
-  1142  0025  1D03               	skipz
-  1143  0026  2829               	goto	u13_25
-  1144  0027  0876               	movf	_receive_data,w
-  1145  0028  0673               	xorwf	??_uart+2,w
-  1146  0029                     u13_25:	
-  1147  0029  1D03               	skipz
-  1148  002A  288D               	goto	i1l962
-  1149                           
-  1150                           ;Slave1.c: 22: LATC1 = 1;
-  1151  002B  0022               	movlb	2	; select bank2
-  1152  002C  148E               	bsf	14,1	;volatile
-  1153                           
-  1154                           ;Slave1.c: 23: LATC2 = 0;
-  1155  002D  110E               	bcf	14,2	;volatile
-  1156                           
-  1157                           ;Slave1.c: 24: LATC0 = 0;
-  1158  002E  100E               	bcf	14,0	;volatile
-  1159                           
-  1160                           ;Slave1.c: 26: uart_write(100 + slave_number);
-  1161  002F  3025               	movlw	low (_slave_number| (0+32768))
-  1162  0030  0084               	movwf	4
-  1163  0031  3082               	movlw	high (_slave_number| (0+32768))
-  1164  0032  0085               	movwf	5
-  1165  0033  0800               	movf	0,w	;code access
-  1166  0034  3E64               	addlw	100
-  1167  0035  3182  2216  3180   	fcall	_uart_write
-  1168                           
-  1169                           ;Slave1.c: 27: uart_write(voltage_adc_value>>8);
-  1170  0038  0020               	movlb	0	; select bank0
-  1171  0039  0829               	movf	_voltage_adc_value+1,w
-  1172  003A  3182  2216  3180   	fcall	_uart_write
-  1173                           
-  1174                           ;Slave1.c: 28: uart_write(voltage_adc_value>>4&0xF);
-  1175  003D  0020               	movlb	0	; select bank0
-  1176  003E  0829               	movf	_voltage_adc_value+1,w
-  1177  003F  00F2               	movwf	??_uart+1
-  1178  0040  0828               	movf	_voltage_adc_value,w
-  1179  0041  00F1               	movwf	??_uart
-  1180  0042  3004               	movlw	4
-  1181  0043  00F3               	movwf	??_uart+2
-  1182  0044                     u14_25:	
-  1183  0044  0D72               	rlf	??_uart+1,w
-  1184  0045  0CF2               	rrf	??_uart+1,f
-  1185  0046  0CF1               	rrf	??_uart,f
-  1186  0047  0BF3               	decfsz	??_uart+2,f
-  1187  0048  2844               	goto	u14_25
-  1188  0049  0871               	movf	??_uart,w
-  1189  004A  390F               	andlw	15
-  1190  004B  3182  2216  3180   	fcall	_uart_write
-  1191                           
-  1192                           ;Slave1.c: 29: uart_write(voltage_adc_value & 0xF);
-  1193  004E  0020               	movlb	0	; select bank0
-  1194  004F  0828               	movf	_voltage_adc_value,w
-  1195  0050  390F               	andlw	15
-  1196  0051  3182  2216  3180   	fcall	_uart_write
-  1197                           
-  1198                           ;Slave1.c: 30: uart_write(100+ slave_number);
-  1199  0054  3025               	movlw	low (_slave_number| (0+32768))
-  1200  0055  0084               	movwf	4
-  1201  0056  3082               	movlw	high (_slave_number| (0+32768))
-  1202  0057  0085               	movwf	5
-  1203  0058  0800               	movf	0,w	;code access
-  1204  0059  3E64               	addlw	100
-  1205  005A  3182  2216  3180   	fcall	_uart_write
-  1206                           
-  1207                           ;Slave1.c: 32: uart_write(200 + slave_number);
-  1208  005D  3025               	movlw	low (_slave_number| (0+32768))
-  1209  005E  0084               	movwf	4
-  1210  005F  3082               	movlw	high (_slave_number| (0+32768))
-  1211  0060  0085               	movwf	5
-  1212  0061  0800               	movf	0,w	;code access
-  1213  0062  3EC8               	addlw	200
-  1214  0063  3182  2216  3180   	fcall	_uart_write
-  1215                           
-  1216                           ;Slave1.c: 33: uart_write(temp_adc_value>>8);
-  1217  0066  0020               	movlb	0	; select bank0
-  1218  0067  0827               	movf	_temp_adc_value+1,w
-  1219  0068  3182  2216  3180   	fcall	_uart_write
-  1220                           
-  1221                           ;Slave1.c: 34: uart_write(temp_adc_value>>4&0xF);
-  1222  006B  0020               	movlb	0	; select bank0
-  1223  006C  0827               	movf	_temp_adc_value+1,w
-  1224  006D  00F2               	movwf	??_uart+1
-  1225  006E  0826               	movf	_temp_adc_value,w
-  1226  006F  00F1               	movwf	??_uart
-  1227  0070  3004               	movlw	4
-  1228  0071  00F3               	movwf	??_uart+2
-  1229  0072                     u15_25:	
-  1230  0072  0D72               	rlf	??_uart+1,w
-  1231  0073  0CF2               	rrf	??_uart+1,f
-  1232  0074  0CF1               	rrf	??_uart,f
-  1233  0075  0BF3               	decfsz	??_uart+2,f
-  1234  0076  2872               	goto	u15_25
-  1235  0077  0871               	movf	??_uart,w
-  1236  0078  390F               	andlw	15
-  1237  0079  3182  2216  3180   	fcall	_uart_write
-  1238                           
-  1239                           ;Slave1.c: 35: uart_write(temp_adc_value & 0xF);
-  1240  007C  0020               	movlb	0	; select bank0
-  1241  007D  0826               	movf	_temp_adc_value,w
-  1242  007E  390F               	andlw	15
-  1243  007F  3182  2216  3180   	fcall	_uart_write
-  1244                           
-  1245                           ;Slave1.c: 36: uart_write(200 + slave_number);
-  1246  0082  3025               	movlw	low (_slave_number| (0+32768))
-  1247  0083  0084               	movwf	4
-  1248  0084  3082               	movlw	high (_slave_number| (0+32768))
-  1249  0085  0085               	movwf	5
-  1250  0086  0800               	movf	0,w	;code access
-  1251  0087  3EC8               	addlw	200
-  1252  0088  3182  2216  3180   	fcall	_uart_write
-  1253                           
-  1254                           ;Slave1.c: 38: LATC1 = 0;
-  1255  008B  0022               	movlb	2	; select bank2
-  1256  008C  108E               	bcf	14,1	;volatile
-  1257  008D                     i1l962:	
-  1258                           
-  1259                           ;Slave1.c: 39: }
-  1260                           ;Slave1.c: 41: if(receive_data==200 + slave_number){
-  1261  008D  3025               	movlw	low (_slave_number| (0+32768))
-  1262  008E  0084               	movwf	4
-  1263  008F  3082               	movlw	high (_slave_number| (0+32768))
-  1264  0090  0085               	movwf	5
-  1265  0091  3F00               	moviw [0]fsr0
-  1266  0092  00F1               	movwf	??_uart
-  1267  0093  3F01               	moviw [1]fsr0
-  1268  0094  00F2               	movwf	??_uart+1
-  1269  0095  0871               	movf	??_uart,w
-  1270  0096  3EC8               	addlw	200
-  1271  0097  00F3               	movwf	??_uart+2
-  1272  0098  3000               	movlw	0
-  1273  0099  3D72               	addwfc	??_uart+1,w
-  1274  009A  00F4               	movwf	??_uart+3
-  1275  009B  0877               	movf	_receive_data+1,w
-  1276  009C  0674               	xorwf	??_uart+3,w
-  1277  009D  1D03               	skipz
-  1278  009E  28A1               	goto	u16_25
-  1279  009F  0876               	movf	_receive_data,w
-  1280  00A0  0673               	xorwf	??_uart+2,w
-  1281  00A1                     u16_25:	
-  1282  00A1  1D03               	skipz
-  1283  00A2  2904               	goto	i1l114
-  1284                           
-  1285                           ;Slave1.c: 42: LATC1 = 1;
-  1286  00A3  0022               	movlb	2	; select bank2
-  1287  00A4  148E               	bsf	14,1	;volatile
-  1288                           
-  1289                           ;Slave1.c: 43: LATC2 = 1;
-  1290  00A5  150E               	bsf	14,2	;volatile
-  1291                           
-  1292                           ;Slave1.c: 44: LATC0 = 1;
-  1293  00A6  140E               	bsf	14,0	;volatile
-  1294                           
-  1295                           ;Slave1.c: 46: uart_write(100+ slave_number);
-  1296  00A7  3025               	movlw	low (_slave_number| (0+32768))
-  1297  00A8  0084               	movwf	4
-  1298  00A9  3082               	movlw	high (_slave_number| (0+32768))
-  1299  00AA  0085               	movwf	5
-  1300  00AB  0800               	movf	0,w	;code access
-  1301  00AC  3E64               	addlw	100
-  1302  00AD  3182  2216  3180   	fcall	_uart_write
-  1303                           
-  1304                           ;Slave1.c: 47: uart_write(voltage_adc_value>>8);
-  1305  00B0  0020               	movlb	0	; select bank0
-  1306  00B1  0829               	movf	_voltage_adc_value+1,w
-  1307  00B2  3182  2216  3180   	fcall	_uart_write
-  1308                           
-  1309                           ;Slave1.c: 48: uart_write(voltage_adc_value>>4&0xF);
-  1310  00B5  0020               	movlb	0	; select bank0
-  1311  00B6  0829               	movf	_voltage_adc_value+1,w
-  1312  00B7  00F2               	movwf	??_uart+1
-  1313  00B8  0828               	movf	_voltage_adc_value,w
-  1314  00B9  00F1               	movwf	??_uart
-  1315  00BA  3004               	movlw	4
-  1316  00BB  00F3               	movwf	??_uart+2
-  1317  00BC                     u17_25:	
-  1318  00BC  0D72               	rlf	??_uart+1,w
-  1319  00BD  0CF2               	rrf	??_uart+1,f
-  1320  00BE  0CF1               	rrf	??_uart,f
-  1321  00BF  0BF3               	decfsz	??_uart+2,f
-  1322  00C0  28BC               	goto	u17_25
-  1323  00C1  0871               	movf	??_uart,w
-  1324  00C2  390F               	andlw	15
-  1325  00C3  3182  2216  3180   	fcall	_uart_write
-  1326                           
-  1327                           ;Slave1.c: 49: uart_write(voltage_adc_value & 0xF);
-  1328  00C6  0020               	movlb	0	; select bank0
-  1329  00C7  0828               	movf	_voltage_adc_value,w
-  1330  00C8  390F               	andlw	15
-  1331  00C9  3182  2216  3180   	fcall	_uart_write
-  1332                           
-  1333                           ;Slave1.c: 50: uart_write(100+slave_number);
-  1334  00CC  3025               	movlw	low (_slave_number| (0+32768))
-  1335  00CD  0084               	movwf	4
-  1336  00CE  3082               	movlw	high (_slave_number| (0+32768))
-  1337  00CF  0085               	movwf	5
-  1338  00D0  0800               	movf	0,w	;code access
-  1339  00D1  3E64               	addlw	100
-  1340  00D2  3182  2216  3180   	fcall	_uart_write
-  1341                           
-  1342                           ;Slave1.c: 52: uart_write(200+ slave_number);
-  1343  00D5  3025               	movlw	low (_slave_number| (0+32768))
-  1344  00D6  0084               	movwf	4
-  1345  00D7  3082               	movlw	high (_slave_number| (0+32768))
-  1346  00D8  0085               	movwf	5
-  1347  00D9  0800               	movf	0,w	;code access
-  1348  00DA  3EC8               	addlw	200
-  1349  00DB  3182  2216  3180   	fcall	_uart_write
-  1350                           
-  1351                           ;Slave1.c: 53: uart_write(temp_adc_value>>8);
-  1352  00DE  0020               	movlb	0	; select bank0
-  1353  00DF  0827               	movf	_temp_adc_value+1,w
-  1354  00E0  3182  2216  3180   	fcall	_uart_write
-  1355                           
-  1356                           ;Slave1.c: 54: uart_write(temp_adc_value>>4&0xF);
-  1357  00E3  0020               	movlb	0	; select bank0
-  1358  00E4  0827               	movf	_temp_adc_value+1,w
-  1359  00E5  00F2               	movwf	??_uart+1
-  1360  00E6  0826               	movf	_temp_adc_value,w
-  1361  00E7  00F1               	movwf	??_uart
-  1362  00E8  3004               	movlw	4
-  1363  00E9  00F3               	movwf	??_uart+2
-  1364  00EA                     u18_25:	
-  1365  00EA  0D72               	rlf	??_uart+1,w
-  1366  00EB  0CF2               	rrf	??_uart+1,f
-  1367  00EC  0CF1               	rrf	??_uart,f
-  1368  00ED  0BF3               	decfsz	??_uart+2,f
-  1369  00EE  28EA               	goto	u18_25
-  1370  00EF  0871               	movf	??_uart,w
-  1371  00F0  390F               	andlw	15
-  1372  00F1  3182  2216  3180   	fcall	_uart_write
-  1373                           
-  1374                           ;Slave1.c: 55: uart_write(temp_adc_value & 0xF);
-  1375  00F4  0020               	movlb	0	; select bank0
-  1376  00F5  0826               	movf	_temp_adc_value,w
-  1377  00F6  390F               	andlw	15
-  1378  00F7  3182  2216  3180   	fcall	_uart_write
-  1379                           
-  1380                           ;Slave1.c: 56: uart_write(200+ slave_number);
-  1381  00FA  3025               	movlw	low (_slave_number| (0+32768))
-  1382  00FB  0084               	movwf	4
-  1383  00FC  3082               	movlw	high (_slave_number| (0+32768))
-  1384  00FD  0085               	movwf	5
-  1385  00FE  0800               	movf	0,w	;code access
-  1386  00FF  3EC8               	addlw	200
-  1387  0100  3182  2216         	fcall	_uart_write
-  1388                           
-  1389                           ;Slave1.c: 58: LATC1 = 0;
-  1390  0102  0022               	movlb	2	; select bank2
-  1391  0103  108E               	bcf	14,1	;volatile
-  1392  0104                     i1l114:	
-  1393  0104  0875               	movf	??_uart+4,w
-  1394  0105  0020               	movlb	0	; select bank0
-  1395  0106  00FF               	movwf	127
-  1396  0107  107E               	bcf	126,0	;clear compiler interrupt flag (level 1)
-  1397  0108  0009               	retfie
-  1398  0109                     __end_of_uart:	
-  1399                           
-  1400                           	psect	text7
-  1401  0216                     __ptext7:	
-  1402 ;; *************** function _uart_write *****************
-  1403 ;; Defined at:
-  1404 ;;		line 48 in file "16f1825_uart_lib.h"
-  1405 ;; Parameters:    Size  Location     Type
-  1406 ;;  data            1    wreg     unsigned char 
-  1407 ;; Auto vars:     Size  Location     Type
-  1408 ;;  data            1    0[COMMON] unsigned char 
-  1409 ;; Return value:  Size  Location     Type
-  1410 ;;                  1    wreg      void 
-  1411 ;; Registers used:
-  1412 ;;		wreg
-  1413 ;; Tracked objects:
-  1414 ;;		On entry : 0/0
-  1415 ;;		On exit  : 0/0
-  1416 ;;		Unchanged: 0/0
-  1417 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1101  0004                     _uart:	
+  1102                           
+  1103                           ;incstack = 0
+  1104                           ; Regs used in _uart: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1105  0004  147E               	bsf	126,0	;set compiler interrupt flag (level 1)
+  1106  0005  3180               	pagesel	$
+  1107  0006  0020               	movlb	0	; select bank0
+  1108  0007  087F               	movf	127,w
+  1109  0008  00F5               	movwf	??_uart+4
+  1110                           
+  1111                           ;Slave1.c: 16: if (RCIF){
+  1112  0009  1E91               	btfss	17,5	;volatile
+  1113  000A  2904               	goto	i1l114
+  1114                           
+  1115                           ;Slave1.c: 17: PIR1bits.RCIF = 0;
+  1116  000B  1291               	bcf	17,5	;volatile
+  1117                           
+  1118                           ;Slave1.c: 19: receive_data = uart_read();
+  1119  000C  3182  221F  3180   	fcall	_uart_read
+  1120  000F  00F1               	movwf	??_uart
+  1121  0010  01F2               	clrf	??_uart+1
+  1122  0011  0871               	movf	??_uart,w
+  1123  0012  00F6               	movwf	_receive_data
+  1124  0013  0872               	movf	??_uart+1,w
+  1125  0014  00F7               	movwf	_receive_data+1
+  1126                           
+  1127                           ;Slave1.c: 21: if(receive_data == 100 + slave_number){
+  1128  0015  3027               	movlw	low (_slave_number| (0+32768))
+  1129  0016  0084               	movwf	4
+  1130  0017  3082               	movlw	high (_slave_number| (0+32768))
+  1131  0018  0085               	movwf	5
+  1132  0019  3F00               	moviw [0]fsr0
+  1133  001A  00F1               	movwf	??_uart
+  1134  001B  3F01               	moviw [1]fsr0
+  1135  001C  00F2               	movwf	??_uart+1
+  1136  001D  0871               	movf	??_uart,w
+  1137  001E  3E64               	addlw	100
+  1138  001F  00F3               	movwf	??_uart+2
+  1139  0020  3000               	movlw	0
+  1140  0021  3D72               	addwfc	??_uart+1,w
+  1141  0022  00F4               	movwf	??_uart+3
+  1142  0023  0877               	movf	_receive_data+1,w
+  1143  0024  0674               	xorwf	??_uart+3,w
+  1144  0025  1D03               	skipz
+  1145  0026  2829               	goto	u13_25
+  1146  0027  0876               	movf	_receive_data,w
+  1147  0028  0673               	xorwf	??_uart+2,w
+  1148  0029                     u13_25:	
+  1149  0029  1D03               	skipz
+  1150  002A  288D               	goto	i1l962
+  1151                           
+  1152                           ;Slave1.c: 22: LATC1 = 1;
+  1153  002B  0022               	movlb	2	; select bank2
+  1154  002C  148E               	bsf	14,1	;volatile
+  1155                           
+  1156                           ;Slave1.c: 23: LATC2 = 0;
+  1157  002D  110E               	bcf	14,2	;volatile
+  1158                           
+  1159                           ;Slave1.c: 24: LATC0 = 0;
+  1160  002E  100E               	bcf	14,0	;volatile
+  1161                           
+  1162                           ;Slave1.c: 26: uart_write(100 + slave_number);
+  1163  002F  3027               	movlw	low (_slave_number| (0+32768))
+  1164  0030  0084               	movwf	4
+  1165  0031  3082               	movlw	high (_slave_number| (0+32768))
+  1166  0032  0085               	movwf	5
+  1167  0033  0800               	movf	0,w	;code access
+  1168  0034  3E64               	addlw	100
+  1169  0035  3182  2218  3180   	fcall	_uart_write
+  1170                           
+  1171                           ;Slave1.c: 27: uart_write(voltage_adc_value>>8);
+  1172  0038  0020               	movlb	0	; select bank0
+  1173  0039  0829               	movf	_voltage_adc_value+1,w
+  1174  003A  3182  2218  3180   	fcall	_uart_write
+  1175                           
+  1176                           ;Slave1.c: 28: uart_write(voltage_adc_value>>4&0xF);
+  1177  003D  0020               	movlb	0	; select bank0
+  1178  003E  0829               	movf	_voltage_adc_value+1,w
+  1179  003F  00F2               	movwf	??_uart+1
+  1180  0040  0828               	movf	_voltage_adc_value,w
+  1181  0041  00F1               	movwf	??_uart
+  1182  0042  3004               	movlw	4
+  1183  0043  00F3               	movwf	??_uart+2
+  1184  0044                     u14_25:	
+  1185  0044  0D72               	rlf	??_uart+1,w
+  1186  0045  0CF2               	rrf	??_uart+1,f
+  1187  0046  0CF1               	rrf	??_uart,f
+  1188  0047  0BF3               	decfsz	??_uart+2,f
+  1189  0048  2844               	goto	u14_25
+  1190  0049  0871               	movf	??_uart,w
+  1191  004A  390F               	andlw	15
+  1192  004B  3182  2218  3180   	fcall	_uart_write
+  1193                           
+  1194                           ;Slave1.c: 29: uart_write(voltage_adc_value & 0xF);
+  1195  004E  0020               	movlb	0	; select bank0
+  1196  004F  0828               	movf	_voltage_adc_value,w
+  1197  0050  390F               	andlw	15
+  1198  0051  3182  2218  3180   	fcall	_uart_write
+  1199                           
+  1200                           ;Slave1.c: 30: uart_write(100+ slave_number);
+  1201  0054  3027               	movlw	low (_slave_number| (0+32768))
+  1202  0055  0084               	movwf	4
+  1203  0056  3082               	movlw	high (_slave_number| (0+32768))
+  1204  0057  0085               	movwf	5
+  1205  0058  0800               	movf	0,w	;code access
+  1206  0059  3E64               	addlw	100
+  1207  005A  3182  2218  3180   	fcall	_uart_write
+  1208                           
+  1209                           ;Slave1.c: 32: uart_write(200 + slave_number);
+  1210  005D  3027               	movlw	low (_slave_number| (0+32768))
+  1211  005E  0084               	movwf	4
+  1212  005F  3082               	movlw	high (_slave_number| (0+32768))
+  1213  0060  0085               	movwf	5
+  1214  0061  0800               	movf	0,w	;code access
+  1215  0062  3EC8               	addlw	200
+  1216  0063  3182  2218  3180   	fcall	_uart_write
+  1217                           
+  1218                           ;Slave1.c: 33: uart_write(temp_adc_value>>8);
+  1219  0066  0020               	movlb	0	; select bank0
+  1220  0067  0827               	movf	_temp_adc_value+1,w
+  1221  0068  3182  2218  3180   	fcall	_uart_write
+  1222                           
+  1223                           ;Slave1.c: 34: uart_write(temp_adc_value>>4&0xF);
+  1224  006B  0020               	movlb	0	; select bank0
+  1225  006C  0827               	movf	_temp_adc_value+1,w
+  1226  006D  00F2               	movwf	??_uart+1
+  1227  006E  0826               	movf	_temp_adc_value,w
+  1228  006F  00F1               	movwf	??_uart
+  1229  0070  3004               	movlw	4
+  1230  0071  00F3               	movwf	??_uart+2
+  1231  0072                     u15_25:	
+  1232  0072  0D72               	rlf	??_uart+1,w
+  1233  0073  0CF2               	rrf	??_uart+1,f
+  1234  0074  0CF1               	rrf	??_uart,f
+  1235  0075  0BF3               	decfsz	??_uart+2,f
+  1236  0076  2872               	goto	u15_25
+  1237  0077  0871               	movf	??_uart,w
+  1238  0078  390F               	andlw	15
+  1239  0079  3182  2218  3180   	fcall	_uart_write
+  1240                           
+  1241                           ;Slave1.c: 35: uart_write(temp_adc_value & 0xF);
+  1242  007C  0020               	movlb	0	; select bank0
+  1243  007D  0826               	movf	_temp_adc_value,w
+  1244  007E  390F               	andlw	15
+  1245  007F  3182  2218  3180   	fcall	_uart_write
+  1246                           
+  1247                           ;Slave1.c: 36: uart_write(200 + slave_number);
+  1248  0082  3027               	movlw	low (_slave_number| (0+32768))
+  1249  0083  0084               	movwf	4
+  1250  0084  3082               	movlw	high (_slave_number| (0+32768))
+  1251  0085  0085               	movwf	5
+  1252  0086  0800               	movf	0,w	;code access
+  1253  0087  3EC8               	addlw	200
+  1254  0088  3182  2218  3180   	fcall	_uart_write
+  1255                           
+  1256                           ;Slave1.c: 38: LATC1 = 0;
+  1257  008B  0022               	movlb	2	; select bank2
+  1258  008C  108E               	bcf	14,1	;volatile
+  1259  008D                     i1l962:	
+  1260                           
+  1261                           ;Slave1.c: 39: }
+  1262                           ;Slave1.c: 41: if(receive_data==200 + slave_number){
+  1263  008D  3027               	movlw	low (_slave_number| (0+32768))
+  1264  008E  0084               	movwf	4
+  1265  008F  3082               	movlw	high (_slave_number| (0+32768))
+  1266  0090  0085               	movwf	5
+  1267  0091  3F00               	moviw [0]fsr0
+  1268  0092  00F1               	movwf	??_uart
+  1269  0093  3F01               	moviw [1]fsr0
+  1270  0094  00F2               	movwf	??_uart+1
+  1271  0095  0871               	movf	??_uart,w
+  1272  0096  3EC8               	addlw	200
+  1273  0097  00F3               	movwf	??_uart+2
+  1274  0098  3000               	movlw	0
+  1275  0099  3D72               	addwfc	??_uart+1,w
+  1276  009A  00F4               	movwf	??_uart+3
+  1277  009B  0877               	movf	_receive_data+1,w
+  1278  009C  0674               	xorwf	??_uart+3,w
+  1279  009D  1D03               	skipz
+  1280  009E  28A1               	goto	u16_25
+  1281  009F  0876               	movf	_receive_data,w
+  1282  00A0  0673               	xorwf	??_uart+2,w
+  1283  00A1                     u16_25:	
+  1284  00A1  1D03               	skipz
+  1285  00A2  2904               	goto	i1l114
+  1286                           
+  1287                           ;Slave1.c: 42: LATC1 = 1;
+  1288  00A3  0022               	movlb	2	; select bank2
+  1289  00A4  148E               	bsf	14,1	;volatile
+  1290                           
+  1291                           ;Slave1.c: 43: LATC2 = 1;
+  1292  00A5  150E               	bsf	14,2	;volatile
+  1293                           
+  1294                           ;Slave1.c: 44: LATC0 = 1;
+  1295  00A6  140E               	bsf	14,0	;volatile
+  1296                           
+  1297                           ;Slave1.c: 46: uart_write(100+ slave_number);
+  1298  00A7  3027               	movlw	low (_slave_number| (0+32768))
+  1299  00A8  0084               	movwf	4
+  1300  00A9  3082               	movlw	high (_slave_number| (0+32768))
+  1301  00AA  0085               	movwf	5
+  1302  00AB  0800               	movf	0,w	;code access
+  1303  00AC  3E64               	addlw	100
+  1304  00AD  3182  2218  3180   	fcall	_uart_write
+  1305                           
+  1306                           ;Slave1.c: 47: uart_write(voltage_adc_value>>8);
+  1307  00B0  0020               	movlb	0	; select bank0
+  1308  00B1  0829               	movf	_voltage_adc_value+1,w
+  1309  00B2  3182  2218  3180   	fcall	_uart_write
+  1310                           
+  1311                           ;Slave1.c: 48: uart_write(voltage_adc_value>>4&0xF);
+  1312  00B5  0020               	movlb	0	; select bank0
+  1313  00B6  0829               	movf	_voltage_adc_value+1,w
+  1314  00B7  00F2               	movwf	??_uart+1
+  1315  00B8  0828               	movf	_voltage_adc_value,w
+  1316  00B9  00F1               	movwf	??_uart
+  1317  00BA  3004               	movlw	4
+  1318  00BB  00F3               	movwf	??_uart+2
+  1319  00BC                     u17_25:	
+  1320  00BC  0D72               	rlf	??_uart+1,w
+  1321  00BD  0CF2               	rrf	??_uart+1,f
+  1322  00BE  0CF1               	rrf	??_uart,f
+  1323  00BF  0BF3               	decfsz	??_uart+2,f
+  1324  00C0  28BC               	goto	u17_25
+  1325  00C1  0871               	movf	??_uart,w
+  1326  00C2  390F               	andlw	15
+  1327  00C3  3182  2218  3180   	fcall	_uart_write
+  1328                           
+  1329                           ;Slave1.c: 49: uart_write(voltage_adc_value & 0xF);
+  1330  00C6  0020               	movlb	0	; select bank0
+  1331  00C7  0828               	movf	_voltage_adc_value,w
+  1332  00C8  390F               	andlw	15
+  1333  00C9  3182  2218  3180   	fcall	_uart_write
+  1334                           
+  1335                           ;Slave1.c: 50: uart_write(100+slave_number);
+  1336  00CC  3027               	movlw	low (_slave_number| (0+32768))
+  1337  00CD  0084               	movwf	4
+  1338  00CE  3082               	movlw	high (_slave_number| (0+32768))
+  1339  00CF  0085               	movwf	5
+  1340  00D0  0800               	movf	0,w	;code access
+  1341  00D1  3E64               	addlw	100
+  1342  00D2  3182  2218  3180   	fcall	_uart_write
+  1343                           
+  1344                           ;Slave1.c: 52: uart_write(200+ slave_number);
+  1345  00D5  3027               	movlw	low (_slave_number| (0+32768))
+  1346  00D6  0084               	movwf	4
+  1347  00D7  3082               	movlw	high (_slave_number| (0+32768))
+  1348  00D8  0085               	movwf	5
+  1349  00D9  0800               	movf	0,w	;code access
+  1350  00DA  3EC8               	addlw	200
+  1351  00DB  3182  2218  3180   	fcall	_uart_write
+  1352                           
+  1353                           ;Slave1.c: 53: uart_write(temp_adc_value>>8);
+  1354  00DE  0020               	movlb	0	; select bank0
+  1355  00DF  0827               	movf	_temp_adc_value+1,w
+  1356  00E0  3182  2218  3180   	fcall	_uart_write
+  1357                           
+  1358                           ;Slave1.c: 54: uart_write(temp_adc_value>>4&0xF);
+  1359  00E3  0020               	movlb	0	; select bank0
+  1360  00E4  0827               	movf	_temp_adc_value+1,w
+  1361  00E5  00F2               	movwf	??_uart+1
+  1362  00E6  0826               	movf	_temp_adc_value,w
+  1363  00E7  00F1               	movwf	??_uart
+  1364  00E8  3004               	movlw	4
+  1365  00E9  00F3               	movwf	??_uart+2
+  1366  00EA                     u18_25:	
+  1367  00EA  0D72               	rlf	??_uart+1,w
+  1368  00EB  0CF2               	rrf	??_uart+1,f
+  1369  00EC  0CF1               	rrf	??_uart,f
+  1370  00ED  0BF3               	decfsz	??_uart+2,f
+  1371  00EE  28EA               	goto	u18_25
+  1372  00EF  0871               	movf	??_uart,w
+  1373  00F0  390F               	andlw	15
+  1374  00F1  3182  2218  3180   	fcall	_uart_write
+  1375                           
+  1376                           ;Slave1.c: 55: uart_write(temp_adc_value & 0xF);
+  1377  00F4  0020               	movlb	0	; select bank0
+  1378  00F5  0826               	movf	_temp_adc_value,w
+  1379  00F6  390F               	andlw	15
+  1380  00F7  3182  2218  3180   	fcall	_uart_write
+  1381                           
+  1382                           ;Slave1.c: 56: uart_write(200+ slave_number);
+  1383  00FA  3027               	movlw	low (_slave_number| (0+32768))
+  1384  00FB  0084               	movwf	4
+  1385  00FC  3082               	movlw	high (_slave_number| (0+32768))
+  1386  00FD  0085               	movwf	5
+  1387  00FE  0800               	movf	0,w	;code access
+  1388  00FF  3EC8               	addlw	200
+  1389  0100  3182  2218         	fcall	_uart_write
+  1390                           
+  1391                           ;Slave1.c: 58: LATC1 = 0;
+  1392  0102  0022               	movlb	2	; select bank2
+  1393  0103  108E               	bcf	14,1	;volatile
+  1394  0104                     i1l114:	
+  1395  0104  0875               	movf	??_uart+4,w
+  1396  0105  0020               	movlb	0	; select bank0
+  1397  0106  00FF               	movwf	127
+  1398  0107  107E               	bcf	126,0	;clear compiler interrupt flag (level 1)
+  1399  0108  0009               	retfie
+  1400  0109                     __end_of_uart:	
+  1401                           
+  1402                           	psect	text7
+  1403  0218                     __ptext7:	
+  1404 ;; *************** function _uart_write *****************
+  1405 ;; Defined at:
+  1406 ;;		line 48 in file "16f1825_uart_lib.h"
+  1407 ;; Parameters:    Size  Location     Type
+  1408 ;;  data            1    wreg     unsigned char 
+  1409 ;; Auto vars:     Size  Location     Type
+  1410 ;;  data            1    0[COMMON] unsigned char 
+  1411 ;; Return value:  Size  Location     Type
+  1412 ;;                  1    wreg      void 
+  1413 ;; Registers used:
+  1414 ;;		wreg
+  1415 ;; Tracked objects:
+  1416 ;;		On entry : 0/0
+  1417 ;;		On exit  : 0/0
+  1418 ;;		Unchanged: 0/0
+  1419 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  1418 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1420 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1419 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+  1421 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1420 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  1422 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1421 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+  1423 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1422 ;;Total ram usage:        1 bytes
-  1423 ;; Hardware stack levels used:    1
-  1424 ;; This function calls:
-  1425 ;;		Nothing
-  1426 ;; This function is called by:
-  1427 ;;		_uart
-  1428 ;; This function uses a non-reentrant model
-  1429 ;;
-  1430                           
-  1431                           
-  1432                           ;psect for function _uart_write
-  1433  0216                     _uart_write:	
-  1434                           
-  1435                           ;incstack = 0
-  1436                           ; Regs used in _uart_write: [wreg]
-  1437                           ;uart_write@data stored from wreg
-  1438  0216  00F0               	movwf	uart_write@data
-  1439  0217                     i1l70:	
-  1440                           ;16f1825_uart_lib.h: 49: while(!TRMT);
-  1441                           
-  1442  0217  0023               	movlb	3	; select bank3
-  1443  0218  1C9E               	btfss	30,1	;volatile
-  1444  0219  2A17               	goto	i1l70
-  1445                           
-  1446                           ;16f1825_uart_lib.h: 50: TXREG = data;
-  1447  021A  0870               	movf	uart_write@data,w
-  1448  021B  009A               	movwf	26	;volatile
-  1449  021C  0008               	return
-  1450  021D                     __end_of_uart_write:	
-  1451                           
-  1452                           	psect	text8
-  1453  021D                     __ptext8:	
-  1454 ;; *************** function _uart_read *****************
-  1455 ;; Defined at:
-  1456 ;;		line 53 in file "16f1825_uart_lib.h"
-  1457 ;; Parameters:    Size  Location     Type
-  1458 ;;		None
-  1459 ;; Auto vars:     Size  Location     Type
+  1424 ;;Total ram usage:        1 bytes
+  1425 ;; Hardware stack levels used:    1
+  1426 ;; This function calls:
+  1427 ;;		Nothing
+  1428 ;; This function is called by:
+  1429 ;;		_uart
+  1430 ;; This function uses a non-reentrant model
+  1431 ;;
+  1432                           
+  1433                           
+  1434                           ;psect for function _uart_write
+  1435  0218                     _uart_write:	
+  1436                           
+  1437                           ;incstack = 0
+  1438                           ; Regs used in _uart_write: [wreg]
+  1439                           ;uart_write@data stored from wreg
+  1440  0218  00F0               	movwf	uart_write@data
+  1441  0219                     i1l70:	
+  1442                           ;16f1825_uart_lib.h: 49: while(!TRMT);
+  1443                           
+  1444  0219  0023               	movlb	3	; select bank3
+  1445  021A  1C9E               	btfss	30,1	;volatile
+  1446  021B  2A19               	goto	i1l70
+  1447                           
+  1448                           ;16f1825_uart_lib.h: 50: TXREG = data;
+  1449  021C  0870               	movf	uart_write@data,w
+  1450  021D  009A               	movwf	26	;volatile
+  1451  021E  0008               	return
+  1452  021F                     __end_of_uart_write:	
+  1453                           
+  1454                           	psect	text8
+  1455  021F                     __ptext8:	
+  1456 ;; *************** function _uart_read *****************
+  1457 ;; Defined at:
+  1458 ;;		line 53 in file "16f1825_uart_lib.h"
+  1459 ;; Parameters:    Size  Location     Type
   1460 ;;		None
-  1461 ;; Return value:  Size  Location     Type
-  1462 ;;                  1    wreg      unsigned char 
-  1463 ;; Registers used:
-  1464 ;;		wreg
-  1465 ;; Tracked objects:
-  1466 ;;		On entry : 0/0
-  1467 ;;		On exit  : 0/0
-  1468 ;;		Unchanged: 0/0
-  1469 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1461 ;; Auto vars:     Size  Location     Type
+  1462 ;;		None
+  1463 ;; Return value:  Size  Location     Type
+  1464 ;;                  1    wreg      unsigned char 
+  1465 ;; Registers used:
+  1466 ;;		wreg
+  1467 ;; Tracked objects:
+  1468 ;;		On entry : 0/0
+  1469 ;;		On exit  : 0/0
+  1470 ;;		Unchanged: 0/0
+  1471 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12
-  1470 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1472 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1471 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1473 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1472 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+  1474 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1473 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1475 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0
-  1474 ;;Total ram usage:        0 bytes
-  1475 ;; Hardware stack levels used:    1
-  1476 ;; This function calls:
-  1477 ;;		Nothing
-  1478 ;; This function is called by:
-  1479 ;;		_uart
-  1480 ;; This function uses a non-reentrant model
-  1481 ;;
-  1482                           
-  1483                           
-  1484                           ;psect for function _uart_read
-  1485  021D                     _uart_read:	
-  1486  021D                     i1l76:	
-  1487                           ;16f1825_uart_lib.h: 54: while(!RCIF);
-  1488                           
-  1489                           ;incstack = 0
-  1490                           ; Regs used in _uart_read: [wreg]
-  1491                           
-  1492  021D  0020               	movlb	0	; select bank0
-  1493  021E  1E91               	btfss	17,5	;volatile
-  1494  021F  2A1D               	goto	i1l76
-  1495                           
-  1496                           ;16f1825_uart_lib.h: 55: return RCREG;
-  1497  0220  0023               	movlb	3	; select bank3
-  1498  0221  0819               	movf	25,w	;volatile
-  1499  0222  0008               	return
-  1500  0223                     __end_of_uart_read:	
-  1501  007E                     btemp	set	126	;btemp
-  1502  007E                     int$flags	set	126
-  1503  007E                     wtemp	set	126
-  1504  007E                     wtemp0	set	126
-  1505  0080                     wtemp1	set	128
-  1506  0082                     wtemp2	set	130
-  1507  0084                     wtemp3	set	132
-  1508  0086                     wtemp4	set	134
-  1509  0088                     wtemp5	set	136
-  1510  007F                     wtemp6	set	127
-  1511  007E                     ttemp	set	126
-  1512  007E                     ttemp0	set	126
-  1513  0081                     ttemp1	set	129
-  1514  0084                     ttemp2	set	132
-  1515  0087                     ttemp3	set	135
-  1516  007F                     ttemp4	set	127
-  1517  007E                     ltemp	set	126
-  1518  007E                     ltemp0	set	126
-  1519  0082                     ltemp1	set	130
-  1520  0086                     ltemp2	set	134
-  1521  0080                     ltemp3	set	128
+  1476 ;;Total ram usage:        0 bytes
+  1477 ;; Hardware stack levels used:    1
+  1478 ;; This function calls:
+  1479 ;;		Nothing
+  1480 ;; This function is called by:
+  1481 ;;		_uart
+  1482 ;; This function uses a non-reentrant model
+  1483 ;;
+  1484                           
+  1485                           
+  1486                           ;psect for function _uart_read
+  1487  021F                     _uart_read:	
+  1488  021F                     i1l76:	
+  1489                           ;16f1825_uart_lib.h: 54: while(!RCIF);
+  1490                           
+  1491                           ;incstack = 0
+  1492                           ; Regs used in _uart_read: [wreg]
+  1493                           
+  1494  021F  0020               	movlb	0	; select bank0
+  1495  0220  1E91               	btfss	17,5	;volatile
+  1496  0221  2A1F               	goto	i1l76
+  1497                           
+  1498                           ;16f1825_uart_lib.h: 55: return RCREG;
+  1499  0222  0023               	movlb	3	; select bank3
+  1500  0223  0819               	movf	25,w	;volatile
+  1501  0224  0008               	return
+  1502  0225                     __end_of_uart_read:	
+  1503  007E                     btemp	set	126	;btemp
+  1504  007E                     int$flags	set	126
+  1505  007E                     wtemp	set	126
+  1506  007E                     wtemp0	set	126
+  1507  0080                     wtemp1	set	128
+  1508  0082                     wtemp2	set	130
+  1509  0084                     wtemp3	set	132
+  1510  0086                     wtemp4	set	134
+  1511  0088                     wtemp5	set	136
+  1512  007F                     wtemp6	set	127
+  1513  007E                     ttemp	set	126
+  1514  007E                     ttemp0	set	126
+  1515  0081                     ttemp1	set	129
+  1516  0084                     ttemp2	set	132
+  1517  0087                     ttemp3	set	135
+  1518  007F                     ttemp4	set	127
+  1519  007E                     ltemp	set	126
+  1520  007E                     ltemp0	set	126
+  1521  0082                     ltemp1	set	130
+  1522  0086                     ltemp2	set	134
+  1523  0080                     ltemp3	set	128
 
 
 Data Sizes:
@@ -1877,20 +1879,20 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.36 build -262312587 
-Symbol Table                                                                                   Mon Jun 20 15:42:35 2016
+Symbol Table                                                                                   Mon Jul 11 17:51:49 2016
 
                        pc 0002               __CFG_CP$OFF 0000            uart_write@data 0070  
-                      l65 01A8                        l67 01C3                        l95 01A6  
+                      l65 01AA                        l67 01C5                        l95 01A8  
                      u207 014D                       u217 0159                       u227 0166  
-                     u237 0172                       u247 01F7                       u257 01EC  
+                     u237 0173                       u247 01F9                       u257 01EE  
             __CFG_CPD$OFF 0000                       u197 0134              __CFG_BORV$LO 0000  
-                    S1340 0206              __CFG_LVP$OFF 0000                      l1130 01AE  
-                    l1160 0176                      l1216 0142                      l1170 018A  
-                    l1162 017A                      l1172 018E                      l1164 017E  
-                    l1332 01B4                      l1174 0192                      l1166 0182  
-                    l1334 01BE                      l1168 0186                      l1336 01B9  
-                    l1338 019C                      l1178 0196                      _RCIF 008D  
-                    i1l70 0217                      i1l76 021D                      _TRMT 0CF1  
+                    S1340 0208              __CFG_LVP$OFF 0000                      l1130 01B0  
+                    l1160 0178                      l1216 0142                      l1170 018C  
+                    l1162 017C                      l1172 0190                      l1164 0180  
+                    l1332 01B6                      l1174 0194                      l1166 0184  
+                    l1334 01C0                      l1168 0188                      l1336 01BB  
+                    l1338 019E                      l1178 0198                      _RCIF 008D  
+                    i1l70 0219                      i1l76 021F                      _TRMT 0CF1  
             __CFG_WRT$OFF 0000                      _data 0078                      _main 011C  
                     _uart 0004                      fsr0h 0005                      fsr0l 0004  
                     indf0 0000                      btemp 007E                      ltemp 007E  
@@ -1908,35 +1910,35 @@ Symbol Table                                                                    
                    ttemp3 0087                     ttemp4 007F                     wtemp0 007E  
                    wtemp1 0080                     wtemp2 0082                     wtemp3 0084  
                    wtemp4 0086                     wtemp5 0088                     wtemp6 007F  
-         __initialization 010B              __end_of_main 0175              __end_of_uart 0109  
+         __initialization 010B              __end_of_main 0177              __end_of_uart 0109  
                   ??_main 0025                    ??_uart 0071            __CFG_PLLEN$OFF 0000  
        _voltage_adc_value 0028                    _ADCON0 009D                    _ADRESH 009C  
-                  _ADRESL 009B                    _ANSELA 018C          __end_of_adc_init 01F2  
-        __end_of_adc_read 0206                    _FVRCON 0117                    _OSCCON 0099  
+                  _ADRESL 009B                    _ANSELA 018C          __end_of_adc_init 01F4  
+        __end_of_adc_read 0208                    _FVRCON 0117                    _OSCCON 0099  
                   _TRISC0 0470                    _TRISC1 0471                    _TRISC2 0472  
-        __end_of_baudrate 01C4            __CFG_PWRTE$OFF 0000              __pdataCOMMON 0078  
+        __end_of_baudrate 01C6            __CFG_PWRTE$OFF 0000              __pdataCOMMON 0078  
  __size_of_adc_pin_select 0032   __end_of__initialization 0118            __pcstackCOMMON 0070  
               __pbssBANK0 0026                __pmaintext 011C                __pintentry 0004  
                ?_adc_init 0070                 ?_adc_read 0020        __size_of_uart_init 0019  
       __size_of_uart_read 0006                 ?_baudrate 0020           __CFG_STVREN$OFF 0000  
-              ??_adc_init 0020                ??_adc_read 0022                   __ptext1 01C4  
-                 __ptext2 01A7                   __ptext3 01F2                   __ptext4 0175  
-                 __ptext5 01DD                   __ptext7 0216                   __ptext8 021D  
-              ??_baudrate 0024            _adc_pin_select 0175      end_of_initialization 0118  
-       __end_of_uart_init 01DD         __end_of_uart_read 0223          baudrate@baudrate 0020  
-               _RCSTAbits 019D              __pstringtext 0225                _uart_write 0216  
-        __CFG_FOSC$INTOSC 0000    __end_of_adc_pin_select 01A7         adc_read@adc_value 0023  
+              ??_adc_init 0020                ??_adc_read 0022                   __ptext1 01C6  
+                 __ptext2 01A9                   __ptext3 01F4                   __ptext4 0177  
+                 __ptext5 01DF                   __ptext7 0218                   __ptext8 021F  
+              ??_baudrate 0024            _adc_pin_select 0177      end_of_initialization 0118  
+       __end_of_uart_init 01DF         __end_of_uart_read 0225          baudrate@baudrate 0020  
+               _RCSTAbits 019D              __pstringtext 0227                _uart_write 0218  
+        __CFG_FOSC$INTOSC 0000    __end_of_adc_pin_select 01A9         adc_read@adc_value 0023  
           _temp_adc_value 0026                 _TXSTAbits 019E  adc_pin_select@pin_number 0020  
-             _BAUDCONbits 019F             __pidataCOMMON 0223       start_initialization 010B  
+             _BAUDCONbits 019F             __pidataCOMMON 0225       start_initialization 010B  
          ?_adc_pin_select 0020               _APFCON0bits 011D               ?_uart_write 0070  
        __size_of_adc_init 0015         __size_of_adc_read 0014               __pbssCOMMON 0076  
                ___latbits 0002             __pcstackBANK0 0020         __size_of_baudrate 001D  
-    __end_of_slave_number 0227                 __pswtext1 0206              _receive_data 0076  
+    __end_of_slave_number 0229                 __pswtext1 0208              _receive_data 0076  
      __size_of_uart_write 0007                  _PIE1bits 0091                  _PIR1bits 0011  
-               _uart_init 01C4                 _uart_read 021D                _ADCON0bits 009D  
+               _uart_init 01C6                 _uart_read 021F                _ADCON0bits 009D  
               _ADCON1bits 009E                ?_uart_init 0070                ?_uart_read 0070  
-        ??_adc_pin_select 0022                  _adc_init 01DD                  _adc_read 01F2  
-                _baudrate 01A7             __size_of_main 0059             __size_of_uart 0105  
+        ??_adc_pin_select 0022                  _adc_init 01DF                  _adc_read 01F4  
+                _baudrate 01A9             __size_of_main 005B             __size_of_uart 0105  
                 int$flags 007E              ??_uart_write 0070                _INTCONbits 000B  
-            _slave_number 0225                  intlevel1 0000         __CFG_CLKOUTEN$OFF 0000  
-      __end_of_uart_write 021D               ??_uart_init 0020               ??_uart_read 0070  
+            _slave_number 0227                  intlevel1 0000         __CFG_CLKOUTEN$OFF 0000  
+      __end_of_uart_write 021F               ??_uart_init 0020               ??_uart_read 0070  

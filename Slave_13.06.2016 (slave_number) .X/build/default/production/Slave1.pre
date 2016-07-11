@@ -3902,9 +3902,9 @@ _delay((unsigned long)((10)*(16000000L/4000000.0)));
 voltage_adc_value = adc_read();
 _delay((unsigned long)((10)*(16000000L/4000000.0)));
 adc_pin_select(3);
-_delay((unsigned long)((10)*(16000000L/4000000.0)));
+_delay((unsigned long)((20)*(16000000L/4000000.0)));
 temp_adc_value = adc_read();
-_delay((unsigned long)((10)*(16000000L/4000000.0)));
+_delay((unsigned long)((20)*(16000000L/4000000.0)));
 
 
 }

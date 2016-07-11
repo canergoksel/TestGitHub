@@ -1,4 +1,4 @@
-__end_of_uart_write 21D 0 CODE 0
+__end_of_uart_write 21F 0 CODE 0
 __CFG_WRT$OFF 0 0 ABS 0
 __S0 8009 0 ABS 0
 __S1 7A 0 ABS 0
@@ -7,7 +7,7 @@ __S3 0 0 ABS 0
 __Hintentry 109 0 CODE 0
 __Lintentry 4 0 CODE 0
 __pintentry 4 0 CODE 0
-__end_of_adc_pin_select 1A7 0 CODE 0
+__end_of_adc_pin_select 1A9 0 CODE 0
 _RCIF 8D 0 ABS 0
 _TRMT CF1 0 ABS 0
 _main 11C 0 CODE 0
@@ -17,7 +17,7 @@ ltemp 7E 0 ABS 0
 ttemp 7E 0 ABS 0
 wtemp 7E 0 ABS 0
 _uart 4 0 CODE 0
-_adc_read 1F2 0 CODE 0
+_adc_read 1F4 0 CODE 0
 start 109 0 CODE 0
 _LATC0 870 0 ABS 0
 _LATC1 871 0 ABS 0
@@ -47,14 +47,14 @@ wtemp5 88 0 ABS 0
 wtemp6 7F 0 ABS 0
 __Hconfig 8009 0 CONFIG 0
 __Lconfig 8007 0 CONFIG 0
-_baudrate 1A7 0 CODE 0
+_baudrate 1A9 0 CODE 0
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 ?_adc_read 20 0 BANK0 1
 int$flags 7E 0 ABS 0
-_uart_read 21D 0 CODE 0
+_uart_read 21F 0 CODE 0
 __Hfunctab 0 0 CODE 0
 _TRISC0 470 0 ABS 0
 __size_of_uart_write 0 0 ABS 0
@@ -72,7 +72,7 @@ __size_of_adc_init 0 0 ABS 0
 ___int_sp 0 0 STACK 2
 __CFG_CLKOUTEN$OFF 0 0 ABS 0
 _ANSELA 18C 0 ABS 0
-_adc_init 1DD 0 CODE 0
+_adc_init 1DF 0 CODE 0
 _ADRESH 9C 0 ABS 0
 _OSCCON 99 0 ABS 0
 __Habs1 0 0 ABS 0
@@ -109,11 +109,11 @@ __pcstackBANK0 20 0 BANK0 1
 stacklo 200A 0 ABS 0
 __Hinit 109 0 CODE 0
 __Linit 109 0 CODE 0
-__end_of_main 175 0 CODE 0
+__end_of_main 177 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 118 0 CODE 0
-__end_of_uart_read 223 0 CODE 0
+__end_of_uart_read 225 0 CODE 0
 __Hsfr10 0 0 ABS 0
 __Lsfr10 0 0 ABS 0
 __Hsfr20 0 0 ABS 0
@@ -162,7 +162,7 @@ _RCSTAbits 19D 0 ABS 0
 _TXSTAbits 19E 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
-_uart_init 1C4 0 CODE 0
+_uart_init 1C6 0 CODE 0
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
@@ -183,18 +183,18 @@ __Lbank6 0 0 ABS 0
 __Hbank7 0 0 ABS 0
 _APFCON0bits 11D 0 ABS 0
 __Lbank7 0 0 ABS 0
-__end_of_uart_init 1DD 0 CODE 0
+__end_of_uart_init 1DF 0 CODE 0
 __Hbank8 0 0 ABS 0
 __Lbank8 0 0 ABS 0
 __Hbank9 0 0 ABS 0
 __Lbank9 0 0 ABS 0
-__ptext1 1C4 0 CODE 0
-__ptext2 1A7 0 CODE 0
-__ptext3 1F2 0 CODE 0
-__ptext4 175 0 CODE 0
-__ptext5 1DD 0 CODE 0
-__ptext7 216 0 CODE 0
-__ptext8 21D 0 CODE 0
+__ptext1 1C6 0 CODE 0
+__ptext2 1A9 0 CODE 0
+__ptext3 1F4 0 CODE 0
+__ptext4 177 0 CODE 0
+__ptext5 1DF 0 CODE 0
+__ptext7 218 0 CODE 0
+__ptext8 21F 0 CODE 0
 baudrate@baudrate 20 0 BANK0 1
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -216,7 +216,7 @@ _receive_data 76 0 COMMON 1
 __Hspace_1 7A 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __size_of_uart 0 0 ABS 0
-_uart_write 216 0 CODE 0
+_uart_write 218 0 CODE 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
 __Hcinit 11C 0 CODE 0
@@ -226,8 +226,8 @@ __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 adc_pin_select@pin_number 20 0 BANK0 1
 __CFG_BORV$LO 0 0 ABS 0
-__end_of_baudrate 1C4 0 CODE 0
-_slave_number 225 0 STRCODE 0
+__end_of_baudrate 1C6 0 CODE 0
+_slave_number 227 0 STRCODE 0
 uart_write@data 70 0 COMMON 1
 __size_of_baudrate 0 0 ABS 0
 _voltage_adc_value 28 0 BANK0 1
@@ -261,7 +261,7 @@ __Hstringtext 0 0 ABS 0
 __Lstringtext 0 0 ABS 0
 __Hbank24 0 0 BANK24 1
 __Lbank24 0 0 BANK24 1
-__pstringtext 225 0 STRCODE 0
+__pstringtext 227 0 STRCODE 0
 __Hbank15 0 0 BANK15 1
 __Lbank15 0 0 BANK15 1
 __Hbank25 0 0 BANK25 1
@@ -290,18 +290,18 @@ __size_of_adc_pin_select 0 0 ABS 0
 __CFG_BOREN$OFF 0 0 ABS 0
 __CFG_PWRTE$OFF 0 0 ABS 0
 __HbssCOMMON 0 0 ABS 0
-__end_of_slave_number 227 0 STRCODE 0
+__end_of_slave_number 229 0 STRCODE 0
 __LbssCOMMON 0 0 ABS 0
 __pbssCOMMON 76 0 COMMON 1
 _INTCONbits B 0 ABS 0
-_adc_pin_select 175 0 CODE 0
+_adc_pin_select 177 0 CODE 0
 __Hend_init 10B 0 CODE 0
 __Lend_init 109 0 CODE 0
-__pswtext1 206 0 CONST 0
-__end_of_adc_read 206 0 CODE 0
+__pswtext1 208 0 CONST 0
+__end_of_adc_read 208 0 CODE 0
 __Hreset_vec 2 0 CODE 0
 __Lreset_vec 0 0 CODE 0
-__end_of_adc_init 1F2 0 CODE 0
+__end_of_adc_init 1F4 0 CODE 0
 intlevel0 0 0 CODE 0
 __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 CODE 0
@@ -322,23 +322,23 @@ __CFG_MCLRE$ON 0 0 ABS 0
 __HidataCOMMON 0 0 ABS 0
 __LidataCOMMON 0 0 ABS 0
 __CFG_FOSC$INTOSC 0 0 ABS 0
-__pidataCOMMON 223 0 CODE 0
+__pidataCOMMON 225 0 CODE 0
 __initialization 10B 0 CODE 0
 _temp_adc_value 26 0 BANK0 1
 __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
-intentry 8 40B CODE 8 0
+intentry 8 40F CODE 8 0
 config 1000E 10011 CONFIG 1000E 0
 cstackCOMMON 70 79 COMMON 70 1
 cstackBANK0 20 29 BANK0 20 1
-swtext1 40C 42B CONST 40C 0
-text7 42C 449 CODE 42C 0
-stringtext 44A 44D STRCODE 44A 0
+swtext1 410 42F CONST 410 0
+text7 430 44D CODE 430 0
+stringtext 44E 451 STRCODE 44E 0
 %locals
 dist/default/production\Slave_13.06.2016__slave_number__.X.production.obj
-C:\Users\CANERG~1\AppData\Local\Temp\s7m4.
+C:\Users\gesk\AppData\Local\Temp\s7go.
 474 10B 0 CODE 0
 477 10B 0 CODE 0
 506 10B 0 CODE 0
@@ -374,77 +374,77 @@ Slave1.c
 87 157 0 CODE 0
 88 15B 0 CODE 0
 89 163 0 CODE 0
-90 168 0 CODE 0
-91 170 0 CODE 0
-80 174 0 CODE 0
+90 169 0 CODE 0
+91 171 0 CODE 0
+80 176 0 CODE 0
 16f1825_uart_lib.h
-1 1C4 0 CODE 0
-3 1C4 0 CODE 0
-4 1C6 0 CODE 0
-7 1C7 0 CODE 0
-8 1C9 0 CODE 0
-9 1CA 0 CODE 0
-10 1CB 0 CODE 0
-11 1CC 0 CODE 0
-14 1CD 0 CODE 0
-15 1CE 0 CODE 0
-16 1CF 0 CODE 0
-17 1D0 0 CODE 0
-18 1D1 0 CODE 0
-21 1D2 0 CODE 0
-22 1D3 0 CODE 0
-23 1D4 0 CODE 0
-24 1D5 0 CODE 0
-25 1D6 0 CODE 0
-26 1D7 0 CODE 0
-32 1D8 0 CODE 0
-33 1DA 0 CODE 0
-34 1DB 0 CODE 0
-36 1DC 0 CODE 0
-38 1A7 0 CODE 0
-40 1A7 0 CODE 0
-41 1A8 0 CODE 0
-42 1A8 0 CODE 0
-44 1AD 0 CODE 0
-40 1AE 0 CODE 0
-46 1C3 0 CODE 0
+1 1C6 0 CODE 0
+3 1C6 0 CODE 0
+4 1C8 0 CODE 0
+7 1C9 0 CODE 0
+8 1CB 0 CODE 0
+9 1CC 0 CODE 0
+10 1CD 0 CODE 0
+11 1CE 0 CODE 0
+14 1CF 0 CODE 0
+15 1D0 0 CODE 0
+16 1D1 0 CODE 0
+17 1D2 0 CODE 0
+18 1D3 0 CODE 0
+21 1D4 0 CODE 0
+22 1D5 0 CODE 0
+23 1D6 0 CODE 0
+24 1D7 0 CODE 0
+25 1D8 0 CODE 0
+26 1D9 0 CODE 0
+32 1DA 0 CODE 0
+33 1DC 0 CODE 0
+34 1DD 0 CODE 0
+36 1DE 0 CODE 0
+38 1A9 0 CODE 0
+40 1A9 0 CODE 0
+41 1AA 0 CODE 0
+42 1AA 0 CODE 0
+44 1AF 0 CODE 0
+40 1B0 0 CODE 0
+46 1C5 0 CODE 0
 16f1825_adc_lib.h
-57 1F2 0 CODE 0
-60 1F2 0 CODE 0
-61 1F4 0 CODE 0
-62 1F9 0 CODE 0
-64 201 0 CODE 0
-15 175 0 CODE 0
-17 175 0 CODE 0
-19 176 0 CODE 0
-20 179 0 CODE 0
-23 17A 0 CODE 0
-24 17D 0 CODE 0
-27 17E 0 CODE 0
-28 181 0 CODE 0
-31 182 0 CODE 0
-32 185 0 CODE 0
-35 186 0 CODE 0
-36 189 0 CODE 0
-39 18A 0 CODE 0
-40 18D 0 CODE 0
-43 18E 0 CODE 0
-44 191 0 CODE 0
-47 192 0 CODE 0
-51 195 0 CODE 0
-17 196 0 CODE 0
-55 1A6 0 CODE 0
-17 206 0 CONST 0
-1 1DD 0 CODE 0
-3 1DD 0 CODE 0
-5 1E0 0 CODE 0
-6 1E2 0 CODE 0
-7 1E6 0 CODE 0
-8 1E7 0 CODE 0
-9 1E9 0 CODE 0
-10 1EE 0 CODE 0
-11 1F0 0 CODE 0
-13 1F1 0 CODE 0
+57 1F4 0 CODE 0
+60 1F4 0 CODE 0
+61 1F6 0 CODE 0
+62 1FB 0 CODE 0
+64 203 0 CODE 0
+15 177 0 CODE 0
+17 177 0 CODE 0
+19 178 0 CODE 0
+20 17B 0 CODE 0
+23 17C 0 CODE 0
+24 17F 0 CODE 0
+27 180 0 CODE 0
+28 183 0 CODE 0
+31 184 0 CODE 0
+32 187 0 CODE 0
+35 188 0 CODE 0
+36 18B 0 CODE 0
+39 18C 0 CODE 0
+40 18F 0 CODE 0
+43 190 0 CODE 0
+44 193 0 CODE 0
+47 194 0 CODE 0
+51 197 0 CODE 0
+17 198 0 CODE 0
+55 1A8 0 CODE 0
+17 208 0 CONST 0
+1 1DF 0 CODE 0
+3 1DF 0 CODE 0
+5 1E2 0 CODE 0
+6 1E4 0 CODE 0
+7 1E8 0 CODE 0
+8 1E9 0 CODE 0
+9 1EB 0 CODE 0
+10 1F0 0 CODE 0
+11 1F2 0 CODE 0
+13 1F3 0 CODE 0
 Slave1.c
 15 4 0 CODE 0
 16 9 0 CODE 0
@@ -482,10 +482,10 @@ Slave1.c
 58 102 0 CODE 0
 61 104 0 CODE 0
 16f1825_uart_lib.h
-48 216 0 CODE 0
-49 217 0 CODE 0
-50 21A 0 CODE 0
-51 21C 0 CODE 0
-53 21D 0 CODE 0
-54 21D 0 CODE 0
-55 220 0 CODE 0
+48 218 0 CODE 0
+49 219 0 CODE 0
+50 21C 0 CODE 0
+51 21E 0 CODE 0
+53 21F 0 CODE 0
+54 21F 0 CODE 0
+55 222 0 CODE 0

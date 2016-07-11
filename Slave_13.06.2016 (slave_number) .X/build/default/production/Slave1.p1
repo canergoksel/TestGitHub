@@ -3353,15 +3353,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Slave1.c: 88: adc_pin_select(3);
 "88
 [e ( _adc_pin_select (1 -> 3 `i ]
-[; ;Slave1.c: 89: _delay((unsigned long)((10)*(16000000L/4000000.0)));
+[; ;Slave1.c: 89: _delay((unsigned long)((20)*(16000000L/4000000.0)));
 "89
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 [; ;Slave1.c: 90: temp_adc_value = adc_read();
 "90
 [e = _temp_adc_value ( _adc_read ..  ]
-[; ;Slave1.c: 91: _delay((unsigned long)((10)*(16000000L/4000000.0)));
+[; ;Slave1.c: 91: _delay((unsigned long)((20)*(16000000L/4000000.0)));
 "91
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "94
 }
 [e :U 360 ]

@@ -86,9 +86,9 @@ int main(){
         voltage_adc_value = adc_read();
          __delay_us(10);
         adc_pin_select(3);
-        __delay_us(10);
+        __delay_us(20);
         temp_adc_value = adc_read();
-        __delay_us(10);
+        __delay_us(20);
      
         
     }

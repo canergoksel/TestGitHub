@@ -3,13 +3,13 @@
 [d edition pro ]
 [d chip 16F1825 ]
 [d frameptr 6 ]
-"1 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_adc_lib.h
+"1 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\16f1825_adc_lib.h
 [v _adc_init adc_init `(v  1 e 1 0 ]
 "15
 [v _adc_pin_select adc_pin_select `(v  1 e 1 0 ]
 "57
 [v _adc_read adc_read `(i  1 e 2 0 ]
-"1 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
+"1 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
 [v _uart_init uart_init `(v  1 e 1 0 ]
 "38
 [v _baudrate baudrate `(v  1 e 1 0 ]
@@ -25,7 +25,7 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"15 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\Slave1.c
+"15 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\Slave1.c
 [v _uart uart `II(v  1 e 1 0 ]
 "63
 [v _main main `(i  1 e 2 0 ]
@@ -189,7 +189,7 @@
 [v _TRISC2 TRISC2 `VEb  1 e 0 @1138 ]
 "6926
 [v _TRMT TRMT `VEb  1 e 0 @3313 ]
-"5 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\Slave1.c
+"5 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\Slave1.c
 [v _slave_number slave_number `DCCi  1 e 2 0 ]
 "7
 [v _receive_data receive_data `i  1 e 2 0 ]
@@ -201,7 +201,7 @@
 {
 "95
 } 0
-"1 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
+"1 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
 [v _uart_init uart_init `(v  1 e 1 0 ]
 {
 "36
@@ -212,7 +212,7 @@
 [v baudrate@baudrate baudrate `l  1 p 4 0 ]
 "46
 } 0
-"57 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_adc_lib.h
+"57 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\16f1825_adc_lib.h
 [v _adc_read adc_read `(i  1 e 2 0 ]
 {
 "58
@@ -230,12 +230,12 @@
 {
 "13
 } 0
-"15 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\Slave1.c
+"15 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\Slave1.c
 [v _uart uart `II(v  1 e 1 0 ]
 {
 "61
 } 0
-"48 Q:\Bms1\Kodlar\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
+"48 C:\Users\gesk\Desktop\TestGitHub\Slave_13.06.2016 (slave_number) .X\16f1825_uart_lib.h
 [v _uart_write uart_write `(v  1 e 1 0 ]
 {
 [v uart_write@data data `uc  1 a 1 wreg ]

@@ -1,3 +1,3 @@
 # TestGitHub
-GitHub deneme dosyasý
+GitHub deneme dosyasi
 
